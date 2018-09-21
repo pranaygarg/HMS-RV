@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>Student View</title>
+    </head>
+    
+    <body>
+        <div class="w3-container">
+            <div class = "w3-center">
+                <img src = "{% static 'images/small_rvce.png' %}" height="120">
+            </div>
+            <div id="studinfo" class="w3-container w3-border city">
+                <h2>Student Info</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in stud_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            <!---- ROOM INFO ----->
+                <h2>Room</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in room_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table> 
+            <!---- Counselor INFO ----->
+                <h2>Counselor</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in counselor_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            <!---- Guardian INFO ----->
+                <h2>Guardian</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in guardian_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            <!--- Complaints Info ---->
+                <h2>Complaints</h2>
+                {% if complaint_data %}
+                Status; 0:Filed 1:In Process 2:Closed
+                <table class = "w3-table w3-striped">
+                    <tr>
+                        {% for data in complaint_data.0.items %}
+                        <th>{{ data.0 }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% for data in complaint_data %}
+                        <tr>
+                            {% for record in data.items %}
+                            <td>{{ record.1 }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <!---The complaint code is untested-->
+                    <strong>No Complaint Records Found!</strong>
+                {% endif %}
+            <!--- Mess Info --->
+                <h2>Mess</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in mess_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            </div>
+    </body>
+</html>

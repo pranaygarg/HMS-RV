@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel = "stylesheet" href="{% static 'css/w3.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <scirpt src = "{% static 'js/studview.js' %}"></scirpt>
+        <title>Detailed View</title>
+    </head>
+    
+    <body>
+        <div class="w3-container">
+            <div class = "w3-center">
+                <img src = "{% static 'images/rvce.png' %}" height="120">
+                <img src = "{% static 'images/banner.png' %}">
+            </div>
+            <h2 class = "w3-center">Student Expansion!</h2>
+            <!-- this script form import is not working figure out why.!-->
+            <script>
+                function opensection(evt, cityName) {
+              var i, x, tablinks;
+              x = document.getElementsByClassName("city");
+              for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablink");
+              for (i = 0; i < x.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" w3-green", "");
+              }
+             document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " w3-green";
+            }
+            </script>
+
+            <div class="w3-bar w3-dark-grey">
+                
+                
+                <button class = "w3-bar-item w3-button tablink" onclick="window.history.back()">Back</button>
+                <button class = "w3-bar-item w3-button tablink" onclick="javascript:location.href='/manview/'">HOME</button>
+                <!-- Padding -->
+                <button class="w3-bar-item w3-dark-grey"></button><button class="w3-bar-item w3-dark-grey"></button>
+                <!-- Padding -->
+                <button class="w3-bar-item w3-button tablink w3-green" onclick="opensection(event,'studinfo')">Student Info</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opensection(event,'roominfo')">Room Info</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opensection(event,'counselorinfo')">Counselor Info</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opensection(event,'guardianinfo')">Guardian Info</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opensection(event,'complaintsinfo')">Complaints Info</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opensection(event,'messinfo')">Mess Info</button>
+                
+                </div>
+            
+            <!---- GENERAL INFO ----->
+            <div id="studinfo" class="w3-container w3-border city">
+                <h2>Student Info</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in stud_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <!---- ROOM INFO ----->
+            <div id="roominfo" class="w3-container w3-border city" style="display:none">
+                <h2>Room</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in room_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table> 
+            </div>
+            <!---- Counselor INFO ----->
+            <div id="counselorinfo" class="w3-container w3-border city" style="display:none">
+                <h2>Counselor</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in counselor_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <!---- Guardian INFO ----->
+            <div id="guardianinfo" class="w3-container w3-border city" style="display:none">
+                <h2>Guardian</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in guardian_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <!--- Complaints Info ---->
+            <div id="complaintsinfo" class="w3-container w3-border city" style="display:none">
+                <h2>Complaints</h2>
+                {% if complaint_data %}
+                <table class = "w3-table w3-striped">
+                    <tr>
+                        {% for data in complaint_data.0.items %}
+                        <th>{{ data.0 }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% for data in complaint_data %}
+                        <tr>
+                            {% for record in data.items %}
+                            <td>{{ record.1 }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                    <strong>No Complaint Records Found!</strong>
+                {% endif %}
+            </div>
+            <!--- Mess Info --->
+            <div id="messinfo" class="w3-container w3-border city" style="display:none">
+                <h2>Mess</h2>
+                <table class = "w3-table w3-striped">
+                    {% for data in mess_data.items %}
+                        <tr>
+                            <th>{{ data.0 }}</th>
+                            <td>{{ data.1 }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <!-- END OF INFO-->
+        </div>
+        
+    </body>
+    
+</html>

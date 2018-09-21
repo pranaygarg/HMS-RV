@@ -1,2 +1,9 @@
 # HMS-RV
 Hostel management system for RV College of Engg.
+NOTES:
+
+User_ID in a serverside Cookie created, take the id from there, if 10 digit -> USN; Else EMP_ID.
+Based on the User_ID directly redirect user to the specified view nomatter WTF he tries to access.
+
+Student default pass in FNAME
+Admin Default pass is contact number

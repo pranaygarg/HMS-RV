@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel = "stylesheet" href="{% static 'css/w3.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <title>Manager View</title>
+    </head>
+    
+    <body>
+        <div class="w3-container">
+                <div class = "w3-center">
+                    <img src = "{% static 'images/rvce.png' %}" height="120">
+                    <img src = "{% static 'images/banner.png' %}">
+                </div>
+            <h2 class="w3-center">Welcome Employee {{ user_name }}</h2>
+            <p class= "w3-center">Please Use the portal to Manage Hostelites, Complaints and save the Hostel.</p>
+            
+            <!-- this script form import is not working figure out why.!-->
+            <script>
+                function opensection(evt, cityName) {
+              var i, x, tablinks;
+              x = document.getElementsByClassName("city");
+              for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablink");
+              for (i = 0; i < x.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" w3-green", "");
+              }
+             document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " w3-green";
+            }
+            </script>
+
+            <div class="w3-bar w3-dark-grey">
+                <button class="w3-bar-item w3-button tablink w3-green" onclick="opensection(event,'search')">Search</button>
+                <button class="w3-bar-item w3-button tablink" onclick="opensection(event,'complaints')">Complaints</button>
+                <!----DUMMY---->
+                <button class="w3-bar-item w3-dark-grey"></button>
+                <button class="w3-bar-item w3-dark-grey"></button>
+                <!----DUMMY---->
+                
+                <button class = "w3-bar-item w3-button tablink" onclick="javascript:location.href='/login/logout/'">Logout</button>
+                </div>
+            
+            <!---- Search INFO ----->
+            <div id="search" class="w3-container w3-border city">
+                <h2>Search Sub section</h2>
+                <form name="form_1" action = "search/" method="post">{% csrf_token %}
+                    
+                Search By:<br>
+                <select name="opt" selected ="room">
+                    <option value="room">ROOM NO</option>
+                  <option value="usn">USN</option>
+                  <option value="dept">DEPARTMENT</option>
+                  <option value="year">YEAR</option>
+                </select>
+                Value:<input type="text" name = "val" placeholder = "eg: 101 A 1" class ="w3-border-1">                    <button type="submit" class = "w3-btn w3-green">Search</button>
+                </form>
+            </div>
+            <!---- Manage Complaints ----->
+            <div id="complaints" class="w3-container w3-border city" style="display:none">
+                <i>Status; 0:Filed 1:In Process 2:Closed</i>
+                <h2>Open Complaints</h2>
+                {% if open_complaint_data %}
+                <form name="comp_id_update" action="{% url 'complaint_update' %}" method = 'POST'>{% csrf_token %}
+                <table class = "w3-table w3-striped">
+                    <tr>
+                        {% for data in open_complaint_data.0.items %}
+                        <th>{{ data.0 }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% for data in open_complaint_data %}
+                        <tr>
+                            {% for record in data.items %}
+                            {% if record.0 == 'Status' %}
+                            <td><select name = "comp_id_{{ data.Comp_id }}" value = '{{ record.1 }}'><option value = '0'{% if record.1 = 0 %} selected {% endif %}>0</option><option value = '1'{% if record.1 = 1 %} selected {% endif %}>1</option><option value = '2'{% if record.1 = 2 %} selected {% endif %}>2</option>
+                            {% else %}
+                            <td>{{ record.1 }}</td>
+                            {% endif %}
+                            {% endfor %}
+                                <!--woh this is so dope-->
+                        </tr>
+                    {% endfor %}
+                </table>
+                    <button type="submit">Submit</button> NOTE: Please Submit the form to preserve changes.
+                    </form>
+                {% else %}
+                    <strong>No Complaint Records Found!</strong>
+                {% endif %}
+                <hr>
+                <h2>Closed Complaints</h2>
+                {% if closed_complaint_data %}
+                <table class = "w3-table w3-striped">
+                    <tr>
+                        {% for data in closed_complaint_data.0.items %}
+                        <th>{{ data.0 }}</th>
+                        {% endfor %}
+                    </tr>
+                    {% for data in closed_complaint_data %}
+                        <tr>
+                            {% for record in data.items %}
+                            <td>{{ record.1 }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <!---The complaint code is untested-->
+                    <strong>No Complaint Records Found!</strong>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+    
+</html>

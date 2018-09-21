@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel = "stylesheet" href="{% static 'css/w3.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <title>Search Manager</title>
+    </head>
+    
+    <body bgcolor = 'teal'>
+        <div class = "w3-center">
+                <img src = "{% static 'images/rvce.png' %}" height="120">
+                <img src = "{% static 'images/banner.png' %}">
+            </div>
+        <div class="w3-padding w3-theme-d2"><nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="/login/">HOME</a>
+                </div>
+                <form name="form1" action = "/manview/search/" method = "post">{% csrf_token %}
+                <ul class="nav navbar-nav">
+                    <li><select name="opt" selected ="room">
+                    <option value="room">ROOM NO</option>
+                  <option value="usn">USN</option>
+                  <option value="dept">DEPARTMENT</option>
+                  <option value="year">YEAR</option>
+                </select></li>
+                    <li class="active"><a href="#">Search</a></li>
+                    <li><input name ="val" type = "text" class="w3-input w3-border-0"></li>
+                    <li class = "w3-right"><input class="w3-btn w3-blue" type = "submit"></li>
+                </ul>
+                </form>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h3>Search Results:</h3>
+            <table class="w3-table-all w3-hoverable">
+                {% if students %}
+                <tr class = 'w3-light-grey'>
+                    <thread>
+                        {% for feild in students.0 %}
+                            <th>{{ feild }}</th>
+                        {% endfor %}
+                        <th>EXPANSION</th>
+                        <th>PDF</th>
+                    </thread>
+                </tr>
+                <!--Now creating actual data-->
+                    {% for student in students %}
+                        <tr>
+                            <thread>
+                            {% for record in student.items %}
+                                <td>{{ record.1 }}</td>
+                            {% endfor %}
+                                <td><form id="{{ student.USN }}" action="{% url 'detail_view' %}" method="post">{% csrf_token %}
+                                <input type="hidden" name="USN" value="{{ student.USN }}" />
+                                <a href="#" onclick="document.getElementById('{{ student.USN }}').submit();"><i><u><b>Expand</b></u></i></a>
+                                    </form></td>
+                                <td><form id="{{ student.USN }}_1" action="{% url 'create_pdf' %}" method="post">{% csrf_token %}
+                                <input type="hidden" name="USN" value="{{ student.USN }}" />
+                                <a href="#" onclick="document.getElementById('{{ student.USN }}_1').submit();"><i><u><b>PDF</b></u></i></a>
+                                    </form></td>
+                                <!-- I know it looks like a fix but i don't know proper Jquery yet :P -->
+                            </thread>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <strong>No Records Matching to query Found!</strong>
+                {% endif %}
+                
+                
+            </table>
+        </div>
+        </div>
+
+</body>
+</html>
