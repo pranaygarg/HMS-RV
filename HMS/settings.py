@@ -48,13 +48,13 @@ INSTALLED_APPS = [
     'manview',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -88,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
         'NAME': 'hostel',
-        'USER': 'root',
-        'PASSWORD': 'MYSQL@dabbu123',
+        'USER': 'pandu',
+        'PASSWORD': 'pandu',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -136,7 +136,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATICFILES_DIRS = ["/home/pranay/Projects/HMS/login/static", ]
+STATICFILES_DIRS = ["/home/prabhu/HMS/login/static", ]
 STATIC_URL = '/static/'
 
 #adding Media Dir info
