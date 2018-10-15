@@ -1,0 +1,15 @@
+#footer{
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 2px 2px 25px 25px;
+    background: #E5E4E2;
+}
+#top_nav{
+    border-radius: 25px 25px 2px 2px;
+}
+#logo{
+    vertical-align: middle;
+}
+.carousel-inner img {
+      width: 100%;
+      height: 100%;

@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel = "stylesheet" href="{% static 'css/w3.css' %}">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
-        <title>Manager View</title>
-    </head>
-    
-    <body>
-        <div class="w3-container">
-                <div class = "w3-center">
-                    <img src = "{% static 'images/rvce.png' %}" height="120">
-                    <img src = "{% static 'images/banner.png' %}">
-                </div>
+{% extends 'base.html' %}
+{% block content %}
             <h2 class="w3-center">Welcome Employee {{ user_name }}</h2>
             <p class= "w3-center">Please Use the portal to Manage Hostelites, Complaints and save the Hostel.</p>
             
@@ -116,7 +98,4 @@
                     <strong>No Complaint Records Found!</strong>
                 {% endif %}
             </div>
-        </div>
-    </body>
-    
-</html>
+{% endblock content %}

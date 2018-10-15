@@ -19,6 +19,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 #Another STATIC_DIR for dyanmic path to all the static assests of the website
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+print(STATIC_ROOT, 'hello')
 #this is MEDIA_DIR for all the dynamic and changing media content to be served
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
@@ -136,9 +137,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATICFILES_DIRS = ["/home/prabhu/HMS/login/static", ]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_URL = '/static/'
-
 #adding Media Dir info
+STATICFILES_DIRS = []
+print(STATIC_ROOT,STATIC_URL)
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
