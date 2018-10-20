@@ -79,7 +79,7 @@ class Hostel(models.Model):
 
 
 class Hostelite(models.Model):
-    usn = models.ForeignKey('Student', models.DO_NOTHING, db_column='USN', primary_key=True)  # Field name made lowercase.
+    usn = models.ForeignKey('Student', models.DO_NOTHING, db_column='USN', primary_key=True, related_name = 'hostelite')  # Field name made lowercase.
     keys = models.ForeignKey('KeyPair', models.DO_NOTHING, db_column='Keys_id', blank=True, null=True)  # Field name made lowercase.
     counselor = models.ForeignKey(Counselor, models.DO_NOTHING, db_column='Counselor_id', blank=True, null=True)  # Field name made lowercase.
     mess_name = models.ForeignKey('Mess', models.DO_NOTHING, db_column='Mess_name', blank=True, null=True)  # Field name made lowercase.
@@ -161,6 +161,9 @@ class Student(models.Model):
     class Meta:
         #managed = False
         db_table = 'STUDENT'
+        
+    def __str__(self):
+        return self.usn
 
 
 class Supervisor(models.Model):

@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^login/', include('login.urls')),
     url(r'^studview/',include('studview.urls')),
     url(r'^manview/',include('manview.urls')),
-    url(r'^$', RedirectView.as_view(url='/login/'))
+    url(r'^$', RedirectView.as_view(url='/login/')),
+    url(r'^api/', include(('api.urls', 'api'), namespace = 'api-stud-ret')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 #static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
