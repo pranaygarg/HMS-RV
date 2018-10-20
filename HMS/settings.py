@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'login',
     'studview',
     'manview',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -88,7 +89,7 @@ WSGI_APPLICATION = 'HMS.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.mysql',
-        'NAME': 'hostel',
+        'NAME': 'hostel1',
         'USER': 'pandu',
         'PASSWORD': 'pandu',
         'HOST': '127.0.0.1',

@@ -1,0 +1,752 @@
+-- MySQL dump 10.13  Distrib 5.7.23, for Linux (x86_64)
+--
+-- Host: localhost    Database: hostel1
+-- ------------------------------------------------------
+-- Server version	5.7.23-0ubuntu0.18.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ACCOUNT_DETAILS`
+--
+
+DROP TABLE IF EXISTS `ACCOUNT_DETAILS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ACCOUNT_DETAILS` (
+  `USN` char(10) NOT NULL,
+  `Prev_bal` int(11) DEFAULT NULL,
+  `Cur_bal` int(11) DEFAULT NULL,
+  `No_of_days_eaten` int(11) DEFAULT NULL,
+  PRIMARY KEY (`USN`),
+  CONSTRAINT `accdetailfk` FOREIGN KEY (`USN`) REFERENCES `HOSTELITE` (`USN`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACCOUNT_DETAILS`
+--
+
+LOCK TABLES `ACCOUNT_DETAILS` WRITE;
+/*!40000 ALTER TABLE `ACCOUNT_DETAILS` DISABLE KEYS */;
+INSERT INTO `ACCOUNT_DETAILS` VALUES ('1RV12BT124',19263,16893,25),('1RV12CH055',19758,17388,27),('1RV12CH101',18390,16020,29),('1RV12CH108',19966,17596,31),('1RV12CH114',17842,15472,29),('1RV12CH189',18829,16459,27),('1RV12CS012',16603,14233,26),('1RV12CS041',20209,17839,27),('1RV12CS110',22026,19656,31),('1RV12EC047',17303,14933,26),('1RV12EC183',19249,16879,31),('1RV12EE043',18862,16492,28),('1RV12EE060',19010,16640,25),('1RV12EI066',19817,17447,27),('1RV12EI086',19031,16661,31),('1RV12EI143',26028,23658,31),('1RV12EI144',16518,14148,30),('1RV12EI157',22341,19971,28),('1RV12IS021',22254,19884,26),('1RV12IS027',20621,18251,26),('1RV12IS034',17531,15161,28),('1RV12IS052',17346,14976,29),('1RV12IS065',19814,17814,27),('1RV12IS092',22869,20499,28),('1RV12IS103',19213,16843,30),('1RV12ME116',18095,15725,31),('1RV12TE011',16946,14946,27),('1RV12TE037',22994,20624,28),('1RV12TE113',21390,19020,30),('1RV12TE137',19996,17996,26),('1RV13AS176',20633,18263,29),('1RV13BT079',19569,17199,28),('1RV13CH005',18532,16162,27),('1RV13CH014',21275,18905,28),('1RV13CH105',20176,17806,31),('1RV13CH163',20850,18480,26),('1RV13CH197',26161,24218,27),('1RV13CS036',23974,21604,26),('1RV13CS088',20100,17730,27),('1RV13CS171',20591,18221,25),('1RV13CV002',19262,16892,27),('1RV13CV109',21461,19091,28),('1RV13CV154',19997,17627,29),('1RV13CV191',17763,15393,27),('1RV13EC010',20063,17693,26),('1RV13EC106',20283,17913,31),('1RV13EC152',16573,14203,31),('1RV13EE004',21205,18835,31),('1RV13EE008',23592,21222,26),('1RV13EE138',18316,16390,30),('1RV13EI042',19791,17421,29),('1RV13EI159',17978,15608,28),('1RV13IS045',20308,18308,31),('1RV13IS046',20538,18168,29),('1RV13IS074',18682,16312,27),('1RV13IS140',18866,16496,27),('1RV13IS150',19528,17158,29),('1RV13IS168',18935,16565,28),('1RV13IS175',20422,18052,25),('1RV13IS187',17901,15531,31),('1RV13ME016',17481,15111,28),('1RV13ME096',4329,6699,26),('1RV13ME111',18004,15634,26),('1RV13ME174',19092,16722,26),('1RV13ME179',18439,16069,30),('1RV13ME192',27132,27132,26),('1RV13TE025',19469,17099,30),('1RV13TE118',18646,16646,26),('1RV13TE135',18978,16608,26),('1RV13TE142',19536,17166,28),('1RV13TE153',21280,18910,26),('1RV13TE181',18802,16432,25),('1RV13TE186',19726,17726,27),('1RV13TE193',25723,23579,30),('1RV14AS007',19804,17434,30),('1RV14AS090',20714,18344,25),('1RV14AS122',19373,17003,25),('1RV14AS173',17945,15575,25),('1RV14AS177',21552,19182,28),('1RV14BT001',21281,18911,29),('1RV14BT073',18261,15891,25),('1RV14CH195',25041,22964,25),('1RV14CS068',17696,15326,25),('1RV14EC026',19323,16953,28),('1RV14EC030',18290,15920,31),('1RV14EE003',19020,16650,30),('1RV14EE064',20896,18526,30),('1RV14EE127',20489,18119,31),('1RV14EI083',17170,14800,25),('1RV14EI145',19967,17597,30),('1RV14IS072',17869,15499,29),('1RV14IS198',25785,23641,30),('1RV14ME078',18463,16093,27),('1RV14ME117',22115,19745,25),('1RV14TE044',3722,18908,30),('1RV14TE050',19544,17174,25),('1RV14TE067',19062,16692,26),('1RV14TE097',18220,15850,27),('1RV14TE166',18033,15663,26),('1RV14TE196',25785,23641,30),('1RV15AS102',20861,18491,31),('1RV15BT069',19561,17191,25),('1RV15BT071',18191,15821,31),('1RV15BT076',670,0,30),('1RV15BT121',22184,19814,30),('1RV15BT182',20490,18120,29),('1RV15CH048',19789,17419,25),('1RV15CH087',20689,18319,28),('1RV15CH095',20241,17871,31),('1RV15CH126',20650,18280,29),('1RV15CS009',18839,16469,25),('1RV15CS139',20187,17817,27),('1RV15CS149',18862,16492,27),('1RV15CS180',18312,15942,31),('1RV15CV035',2571,20059,25),('1RV15CV093',20465,18095,30),('1RV15CV133',20553,18183,28),('1RV15CV146',20503,18133,25),('1RV15CV200',26080,23936,25),('1RV15EI057',17096,14726,27),('1RV15EI130',17266,14896,27),('1RV15EI199',26161,26161,31),('1RV15IS070',17863,15493,30),('1RV15IS081',19058,16688,27),('1RV15IS158',18299,15929,26),('1RV15ME075',25977,23607,30),('1RV15ME141',21668,19298,30),('1RV15TE033',17197,14827,30),('1RV15TE172',22124,19754,30),('1RV16AS006',21591,19221,31),('1RV16AS020',20946,18576,28),('1RV16AS053',20795,18425,26),('1RV16AS155',19080,16710,30),('1RV16BT156',20682,18312,29),('1RV16CH084',19364,16994,28),('1RV16CS164',18480,16110,28),('1RV16EC099',20262,18262,28),('1RV16EI029',19955,17585,30),('1RV16EI129',18644,16274,31),('1RV16EI131',20138,17768,29),('1RV16EI136',20475,18105,31),('1RV16IS098',19448,17078,28),('1RV16ME085',18842,16472,29),('1RV16TE018',19080,16710,28),('1RV16TE059',15040,12670,30),('1RV16TE185',18659,16289,31),('1RV17AS019',22431,20061,28),('1RV17AS119',18695,16325,26),('1RV17AS167',19282,16912,29),('1RV17AS169',17919,15549,30),('1RV17BT063',18784,16414,26),('1RV17BT132',19969,17599,31),('1RV17BT160',19797,17427,27),('1RV17CH031',19954,17584,31),('1RV17CH032',18030,15660,31),('1RV17CS015',20816,18446,26),('1RV17CS024',19437,17067,31),('1RV17CV054',20063,17693,29),('1RV17EC023',19558,17188,30),('1RV17EC147',18868,16498,27),('1RV17EE120',21314,18944,28),('1RV17EE125',21232,18862,28),('1RV17EE170',19306,16936,28),('1RV17EI061',19879,17509,30),('1RV17EI123',19110,16740,26),('1RV17IS039',19416,17416,30),('1RV17IS128',20239,17869,28),('1RV17ME190',19762,17392,27),('1RV17TE051',18605,16235,28),('1RV17TE115',17809,15439,29),('1RV18AS040',19051,16681,28),('1RV18AS107',22527,20527,29),('1RV18AS188',19442,17072,29),('1RV18BT058',18958,16588,26),('1RV18BT077',23435,21435,25),('1RV18BT080',20889,18519,29),('1RV18CH091',17483,15113,26),('1RV18CH184',20204,17834,29),('1RV18CS094',18178,15808,25),('1RV18CS165',20487,18117,30),('1RV18CV100',21007,18637,31),('1RV18CV104',21875,19505,31),('1RV18CV194',25000,24799,27),('1RV18EC038',20128,17758,30),('1RV18EC089',18666,16296,29),('1RV18EC148',18750,16380,28),('1RV18EE049',19918,17548,27),('1RV18EE134',17835,15465,27),('1RV18EE151',19644,17274,31),('1RV18EE178',20614,18244,30),('1RV18EI028',17795,15425,31),('1RV18EI056',19469,17469,25),('1RV18EI162',20098,17728,27),('1RV18IS082',20379,18009,28),('1RV18ME013',20236,17866,26),('1RV18ME022',21498,19128,31),('1RV18ME062',19769,17399,27),('1RV18ME112',19510,17140,30),('1RV18ME161',19995,17625,28),('1RV18TE017',18414,16044,25);
+/*!40000 ALTER TABLE `ACCOUNT_DETAILS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ADMIN`
+--
+
+DROP TABLE IF EXISTS `ADMIN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ADMIN` (
+  `Emp_id` char(7) NOT NULL,
+  PRIMARY KEY (`Emp_id`),
+  CONSTRAINT `admempfk` FOREIGN KEY (`Emp_id`) REFERENCES `EMPLOYEE` (`Emp_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ADMIN`
+--
+
+LOCK TABLES `ADMIN` WRITE;
+/*!40000 ALTER TABLE `ADMIN` DISABLE KEYS */;
+INSERT INTO `ADMIN` VALUES ('00N0010'),('04N0012'),('06N0015'),('07N0007'),('08N0014'),('13N0004'),('13N0008'),('13N0009'),('13N0013'),('14N0001'),('17N0003'),('95N0006'),('97N0002'),('99N0005'),('99N0011');
+/*!40000 ALTER TABLE `ADMIN` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `COMPLAINTS`
+--
+
+DROP TABLE IF EXISTS `COMPLAINTS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `COMPLAINTS` (
+  `Category` varchar(15) NOT NULL DEFAULT '',
+  PRIMARY KEY (`Category`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `COMPLAINTS`
+--
+
+LOCK TABLES `COMPLAINTS` WRITE;
+/*!40000 ALTER TABLE `COMPLAINTS` DISABLE KEYS */;
+INSERT INTO `COMPLAINTS` VALUES ('Carpenter'),('Cleaner'),('Electrician'),('H.Cook'),('Plumber'),('Sweeper');
+/*!40000 ALTER TABLE `COMPLAINTS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `COMPLAINT_FILE`
+--
+
+DROP TABLE IF EXISTS `COMPLAINT_FILE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `COMPLAINT_FILE` (
+  `Comp_id` int(11) NOT NULL AUTO_INCREMENT,
+  `USN` char(10) DEFAULT NULL,
+  `Category` varchar(11) DEFAULT NULL,
+  `Status` int(11) DEFAULT '0',
+  `Description` varchar(150) DEFAULT NULL,
+  `Init_timestamp` timestamp NOT NULL DEFAULT '2018-03-11 10:36:04',
+  `Update_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Comp_id`),
+  KEY `comphosfk` (`USN`),
+  KEY `compcasfk` (`Category`),
+  CONSTRAINT `compcasfk` FOREIGN KEY (`Category`) REFERENCES `COMPLAINTS` (`Category`) ON UPDATE CASCADE,
+  CONSTRAINT `comphosfk` FOREIGN KEY (`USN`) REFERENCES `HOSTELITE` (`USN`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `COMPLAINT_FILE`
+--
+
+LOCK TABLES `COMPLAINT_FILE` WRITE;
+/*!40000 ALTER TABLE `COMPLAINT_FILE` DISABLE KEYS */;
+INSERT INTO `COMPLAINT_FILE` VALUES (1,'1RV12BT124','Cleaner',1,'My room hasen\'t been cleaned for ages!','2018-03-11 10:36:04','2018-04-12 05:56:38'),(2,'1RV17IS039','H.Cook',2,'The Food is very oily and there\'suger everywhere!','2018-03-11 10:45:57','2018-04-12 05:39:21'),(3,'1RV13TE135','Plumber',1,'The Urinal is Blocked and it\'s smelling very bad in the washroom near my ROOM!','2018-03-11 10:47:07','2018-04-12 05:39:15'),(4,'1RV13IS187','Carpenter',0,'My table is broken! My interview is tommorow, please fix it ASAP','2018-03-11 10:48:19','2018-03-11 10:48:19'),(5,'1RV17IS128','Carpenter',2,'334','2018-03-11 10:36:04','2018-04-12 05:57:02'),(6,'1RV17IS128','Electrician',1,'Fan not working.','2018-03-11 10:36:04','2018-04-12 05:56:38');
+/*!40000 ALTER TABLE `COMPLAINT_FILE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `COUNSELOR`
+--
+
+DROP TABLE IF EXISTS `COUNSELOR`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `COUNSELOR` (
+  `T_id` char(7) NOT NULL,
+  PRIMARY KEY (`T_id`),
+  CONSTRAINT `teachfk` FOREIGN KEY (`T_id`) REFERENCES `TEACHER` (`T_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `COUNSELOR`
+--
+
+LOCK TABLES `COUNSELOR` WRITE;
+/*!40000 ALTER TABLE `COUNSELOR` DISABLE KEYS */;
+INSERT INTO `COUNSELOR` VALUES ('00T0049'),('01T0006'),('01T0045'),('01T0046'),('05T0039'),('05T0048'),('06T0005'),('07T0001'),('09T0038'),('10T0034'),('11T0002'),('11T0011'),('12T0023'),('12T0030'),('13T0014'),('13T0019'),('16T0037'),('95T0017'),('95T0041'),('96T0042'),('96T0047'),('98T0009'),('98T0032'),('99T0021'),('99T0026');
+/*!40000 ALTER TABLE `COUNSELOR` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `EMPLOYEE`
+--
+
+DROP TABLE IF EXISTS `EMPLOYEE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `EMPLOYEE` (
+  `Emp_id` char(7) NOT NULL,
+  `Name` varchar(25) DEFAULT NULL,
+  `Contact_no` char(10) DEFAULT NULL,
+  `Designation` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`Emp_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `EMPLOYEE`
+--
+
+LOCK TABLES `EMPLOYEE` WRITE;
+/*!40000 ALTER TABLE `EMPLOYEE` DISABLE KEYS */;
+INSERT INTO `EMPLOYEE` VALUES ('00N0010','Chandra. A','1418643343','H.Cook'),('00N0054','Siddaraju. K.H','6806784143','Helper'),('00N0063','Ashoka. N.R','9914263054','Helper'),('01N0032','Nagaraju. K.H','6672996273','Helper'),('01N0034','Sudhakara. J','1666247901','Helper'),('01N0050','Nagaraju. U.L','2999429398','Helper'),('01N0052','H.R. Kumara','5056317888','Helper'),('01N0076','Raja N','9362617013','Plumber'),('02N0020','Thimmegowda','6638691392','Asst cook '),('02N0053','H.J. Murthy','7867144226','Helper'),('02N0058','Mahesha. N.R','6542235493','Helper'),('02N0072','Narasimha Murthy S','9004251146','Sweeper'),('03N0022','Kiran Kumar. H.N','1507044232','Asst Cook'),('03N0027','Gavisiddaiah','5220663054','Helper'),('03N0047','Muniraju','5328128206','Helper'),('04N0012','Shivalinga. C','6320040270','H.Cook'),('04N0018','Karibasappa','2977217363','Asst cook'),('05N0023','Jagadeesha. R','3815868513','Asst Cook'),('05N0028','Raju. E','9968316237','Helper'),('05N0031','Nagaraju. K','7269466335','Helper'),('05N0036','Kumar. H','580785475','Helper'),('05N0057','Nagesh. J  ','1804423459','Helper'),('06N0015','Arvind Jagadish Raj','5382631670','Electrician'),('06N0019','Narasimha Murthy. C.U','2659529876','Asst cook'),('06N0033','Krishna Dasan','2870487150','Helper'),('06N0038','Mangesha. B.C','1739764242','Helper'),('06N0046','Hanumantha Raju. G.K','5651458492','Helper'),('06N0048','Hanumantha. S.N ','9083986500','Helper'),('06N0049','Dhilip. S.T','1677404035','Helper'),('06N0074','Devegowda N.B ','2110123524','Plumber'),('07N0007','Putta Swamy. H','4978244382','Supervisor'),('07N0055','Srinivasa. N ','5051445322','Cleaner'),('08N0014','Puttaraju. N','9827954490','H.Cook'),('08N0024','Ravi. H.P ','6734645282','Asst Cook'),('08N0037','Huchhe Gowda','2823819193','Helper'),('08N0040','Krishna. N.C','4776252007','Helper'),('08N0041','Shiva. S.R','4755354102','Helper'),('08N0044','Ravi. R.C','3065938251','Helper'),('08N0070','Kadrappa','3794860977','Sweeper'),('09N0059','Girish. H.T  ','2922055019','Helper'),('09N0061','Thimme Gowda. V','2661938087','Helper'),('10N0017','Eshwara','8543371988','Asst cook'),('10N0056','Rangaswamy J','5421177645','Helper'),('10N0071','Thippeswamy','1902964977','Sweeper'),('11N0025','Mahesha. K. M','539737356','Helper'),('11N0026','Kumara. C','6201299351','Helper'),('11N0035','Siddaraju','9875504386','Helper'),('11N0042','Shivakumar. R','9795888358','Helper'),('11N0062','Harish B','7954414736','Helper'),('12N0029','Ramakrishna','7301136765','Helper'),('12N0067','Narasimhappa. M','7446190418','Sweeper'),('13N0004','Alse. A.S','1353055957','Supervisor'),('13N0008','Marappa','7308118347','Attender'),('13N0009','Krishna Murthy. M','7572132251','H.Cook'),('13N0013','Krishna','3163454682','H.Cook'),('13N0016','Srinivasa. R   ','6381957816','Asst cook '),('13N0030','Venkatesh. T','5282774518','Helper'),('13N0073','Ningaraju. K','9707360143','Carpenter'),('14N0001','Vijaya Kumar P T','2997555973','Sr. Clerk'),('14N0045','Raju. U','923532552','Helper'),('16N0060','Shivakumar G.V','8601195008','Helper'),('16N0068','Srinivasa. R','733247717','Sweeper'),('16N0077','Govinde Gowda N P','3684012068','Cleaner'),('17N0003','Lakshmipathi K V','565341146','Cashier'),('17N0066','Narasimha. N','8367999134','Sweeper'),('95N0006','M. Mallesh','3770053141','Supervisor'),('96N0039','Lokesha','9704499728','Helper'),('96N0064','Siddappaji C','9134555846','Helper'),('96N0075','Gangadhara H.C','1787507823','Cleaner'),('97N0002','Puneeth Kashyap. S.G','8064142709','Clerk'),('97N0021','Narayana','5190515796','Asst Cook'),('98N0065','Govindappa','2713231043','Sweeper'),('99N0005','Dhilip Kumar. N','7480791097','Supervisor'),('99N0011','Boraiah','1517790050','H.Cook'),('99N0043','Basavaraju B','6346384171','Helper'),('99N0051','N.R. Aruna','7305329754','Helper'),('99N0069','Narasimha. R','7226177412','Sweeper');
+/*!40000 ALTER TABLE `EMPLOYEE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `HOSTEL`
+--
+
+DROP TABLE IF EXISTS `HOSTEL`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `HOSTEL` (
+  `Hostel_id` int(11) NOT NULL,
+  `Name` varchar(10) DEFAULT NULL,
+  `Floors` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Hostel_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `HOSTEL`
+--
+
+LOCK TABLES `HOSTEL` WRITE;
+/*!40000 ALTER TABLE `HOSTEL` DISABLE KEYS */;
+INSERT INTO `HOSTEL` VALUES (0,'Universal',0),(1,'Cauvery',2),(2,'DJ',2),(3,'MV',2);
+/*!40000 ALTER TABLE `HOSTEL` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `HOSTELITE`
+--
+
+DROP TABLE IF EXISTS `HOSTELITE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `HOSTELITE` (
+  `USN` char(10) NOT NULL,
+  `Keys_id` int(11) DEFAULT NULL,
+  `Counselor_id` char(7) DEFAULT NULL,
+  `Mess_name` varchar(10) DEFAULT 'Cauvery',
+  PRIMARY KEY (`USN`),
+  KEY `messfk` (`Mess_name`),
+  KEY `counfk` (`Counselor_id`),
+  KEY `keyfk` (`Keys_id`),
+  CONSTRAINT `counfk` FOREIGN KEY (`Counselor_id`) REFERENCES `COUNSELOR` (`T_id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `keyfk` FOREIGN KEY (`Keys_id`) REFERENCES `KEY_PAIR` (`Cupboard`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `messfk` FOREIGN KEY (`Mess_name`) REFERENCES `MESS` (`Mess_name`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `studfk` FOREIGN KEY (`USN`) REFERENCES `STUDENT` (`USN`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `HOSTELITE`
+--
+
+LOCK TABLES `HOSTELITE` WRITE;
+/*!40000 ALTER TABLE `HOSTELITE` DISABLE KEYS */;
+INSERT INTO `HOSTELITE` VALUES ('1RV12BT124',173,'13T0014','Cauvery'),('1RV12CH055',104,'11T0011','Cauvery'),('1RV12CH101',150,'13T0019','Cauvery'),('1RV12CH108',157,'16T0037','Cauvery'),('1RV12CH114',163,'01T0046','Cauvery'),('1RV12CH189',238,'99T0026','Cauvery'),('1RV12CS012',61,'99T0026','Cauvery'),('1RV12CS041',90,'12T0030','Cauvery'),('1RV12CS110',159,'05T0039','Cauvery'),('1RV12EC047',96,'95T0041','Cauvery'),('1RV12EC183',232,'11T0011','Cauvery'),('1RV12EE043',92,'10T0034','Cauvery'),('1RV12EE060',109,'12T0023','Cauvery'),('1RV12EI066',115,'09T0038','Cauvery'),('1RV12EI086',135,'12T0030','Cauvery'),('1RV12EI143',192,'99T0026','Cauvery'),('1RV12EI144',193,'12T0030','Cauvery'),('1RV12EI157',206,'07T0001','Cauvery'),('1RV12IS021',70,'01T0045','Cauvery'),('1RV12IS027',76,'11T0002','Cauvery'),('1RV12IS034',83,'11T0011','Cauvery'),('1RV12IS052',101,'06T0005','Cauvery'),('1RV12IS065',114,'16T0037','Cauvery'),('1RV12IS092',141,'95T0041','Cauvery'),('1RV12IS103',152,'12T0023','Cauvery'),('1RV12ME116',165,'05T0048','Cauvery'),('1RV12TE011',60,'12T0023','Cauvery'),('1RV12TE037',86,'13T0019','Cauvery'),('1RV12TE113',162,'01T0045','Cauvery'),('1RV12TE137',186,'11T0011','Cauvery'),('1RV13AS176',225,'96T0042','Cauvery'),('1RV13BT079',128,'11T0011','Cauvery'),('1RV13CH005',54,'98T0009','Cauvery'),('1RV13CH014',63,'98T0032','Cauvery'),('1RV13CH105',154,'12T0030','Cauvery'),('1RV13CH163',212,'13T0014','Cauvery'),('1RV13CH197',246,'96T0042','Cauvery'),('1RV13CS036',85,'95T0017','Cauvery'),('1RV13CS088',137,'10T0034','Cauvery'),('1RV13CS171',220,'10T0034','Cauvery'),('1RV13CV002',51,'11T0002','Cauvery'),('1RV13CV109',158,'09T0038','Cauvery'),('1RV13CV154',203,'96T0047','Cauvery'),('1RV13CV191',240,'98T0032','Cauvery'),('1RV13EC010',59,'99T0021','Cauvery'),('1RV13EC106',155,'98T0032','Cauvery'),('1RV13EC152',201,'01T0045','Cauvery'),('1RV13EE004',53,'01T0006','Cauvery'),('1RV13EE008',57,'95T0017','Cauvery'),('1RV13EE138',187,'13T0014','Cauvery'),('1RV13EI042',91,'98T0032','Cauvery'),('1RV13EI159',208,'06T0005','Cauvery'),('1RV13IS045',94,'09T0038','Cauvery'),('1RV13IS046',95,'05T0039','Cauvery'),('1RV13IS074',123,'07T0001','Cauvery'),('1RV13IS140',189,'13T0019','Cauvery'),('1RV13IS150',199,'95T0041','Cauvery'),('1RV13IS168',217,'99T0026','Cauvery'),('1RV13IS175',224,'95T0041','Cauvery'),('1RV13IS187',236,'99T0021','Cauvery'),('1RV13ME016',65,'16T0037','Cauvery'),('1RV13ME096',145,'96T0047','Cauvery'),('1RV13ME111',160,'95T0041','Cauvery'),('1RV13ME174',223,'05T0039','Cauvery'),('1RV13ME179',228,'11T0002','Cauvery'),('1RV13ME192',241,'10T0034','Cauvery'),('1RV13TE025',74,'00T0049','Cauvery'),('1RV13TE118',167,'07T0001','Cauvery'),('1RV13TE135',184,'01T0006','Cauvery'),('1RV13TE142',191,'12T0023','Cauvery'),('1RV13TE153',202,'01T0046','Cauvery'),('1RV13TE181',230,'01T0006','Cauvery'),('1RV13TE186',235,'13T0019','Cauvery'),('1RV13TE193',242,'16T0037','Cauvery'),('1RV14AS007',56,'13T0014','Cauvery'),('1RV14AS090',139,'09T0038','Cauvery'),('1RV14AS122',171,'98T0009','Cauvery'),('1RV14AS173',222,'09T0038','Cauvery'),('1RV14AS177',226,'01T0045','Cauvery'),('1RV14BT001',50,'07T0001','Cauvery'),('1RV14BT073',122,'05T0048','Cauvery'),('1RV14CH195',244,'05T0039','Cauvery'),('1RV14CS068',117,'95T0041','Cauvery'),('1RV14EC026',75,'07T0001','Cauvery'),('1RV14EC030',79,'11T0002','Cauvery'),('1RV14EE003',52,'06T0005','Cauvery'),('1RV14EE064',113,'10T0034','Cauvery'),('1RV14EE127',176,'99T0021','Cauvery'),('1RV14EI083',132,'99T0021','Cauvery'),('1RV14EI145',194,'98T0032','Cauvery'),('1RV14IS072',121,'96T0047','Cauvery'),('1RV14IS198',247,'01T0045','Cauvery'),('1RV14ME078',127,'98T0009','Cauvery'),('1RV14ME117',166,'00T0049','Cauvery'),('1RV14TE044',93,'16T0037','Cauvery'),('1RV14TE050',99,'07T0001','Cauvery'),('1RV14TE067',116,'05T0039','Cauvery'),('1RV14TE097',146,'05T0048','Cauvery'),('1RV14TE166',215,'99T0021','Cauvery'),('1RV14TE196',245,'95T0041','Cauvery'),('1RV15AS102',151,'99T0021','Cauvery'),('1RV15BT069',118,'96T0042','Cauvery'),('1RV15BT071',120,'01T0046','Cauvery'),('1RV15BT076',125,'06T0005','Cauvery'),('1RV15BT121',170,'01T0006','Cauvery'),('1RV15BT182',231,'98T0009','Cauvery'),('1RV15CH048',97,'96T0042','Cauvery'),('1RV15CH087',136,'98T0032','Cauvery'),('1RV15CH095',144,'01T0046','Cauvery'),('1RV15CH126',175,'13T0019','Cauvery'),('1RV15CS009',58,'13T0019','Cauvery'),('1RV15CS139',188,'95T0017','Cauvery'),('1RV15CS149',198,'05T0039','Cauvery'),('1RV15CS180',229,'06T0005','Cauvery'),('1RV15CV035',84,'13T0014','Cauvery'),('1RV15CV093',142,'96T0042','Cauvery'),('1RV15CV133',182,'11T0002','Cauvery'),('1RV15CV146',195,'10T0034','Cauvery'),('1RV15CV200',249,'96T0047','Cauvery'),('1RV15EI057',106,'95T0017','Cauvery'),('1RV15EI130',179,'12T0030','Cauvery'),('1RV15EI199',248,'01T0046','Cauvery'),('1RV15IS070',119,'01T0045','Cauvery'),('1RV15IS081',130,'95T0017','Cauvery'),('1RV15IS158',207,'11T0002','Cauvery'),('1RV15ME075',124,'11T0002','Cauvery'),('1RV15ME141',190,'99T0021','Cauvery'),('1RV15TE033',82,'98T0009','Cauvery'),('1RV15TE172',221,'16T0037','Cauvery'),('1RV16AS006',55,'11T0011','Cauvery'),('1RV16AS020',69,'96T0042','Cauvery'),('1RV16AS053',102,'01T0006','Cauvery'),('1RV16AS155',204,'05T0048','Cauvery'),('1RV16BT156',205,'00T0049','Cauvery'),('1RV16CH084',133,'12T0023','Cauvery'),('1RV16CS164',213,'95T0017','Cauvery'),('1RV16EC099',148,'13T0014','Cauvery'),('1RV16EI029',78,'07T0001','Cauvery'),('1RV16EI129',178,'99T0026','Cauvery'),('1RV16EI131',180,'98T0032','Cauvery'),('1RV16EI136',185,'98T0009','Cauvery'),('1RV16IS098',147,'00T0049','Cauvery'),('1RV16ME085',134,'99T0026','Cauvery'),('1RV16TE018',67,'05T0039','Cauvery'),('1RV16TE059',108,'99T0021','Cauvery'),('1RV16TE185',234,'95T0017','Cauvery'),('1RV17AS019',68,'95T0041','Cauvery'),('1RV17AS119',168,'11T0002','Cauvery'),('1RV17AS167',216,'12T0023','Cauvery'),('1RV17AS169',218,'12T0030','Cauvery'),('1RV17BT063',112,'98T0032','Cauvery'),('1RV17BT132',181,'07T0001','Cauvery'),('1RV17BT160',209,'01T0006','Cauvery'),('1RV17CH031',80,'06T0005','Cauvery'),('1RV17CH032',81,'01T0006','Cauvery'),('1RV17CS015',64,'10T0034','Cauvery'),('1RV17CS024',73,'05T0048','Cauvery'),('1RV17CV054',103,'98T0009','Cauvery'),('1RV17EC023',72,'96T0047','Cauvery'),('1RV17EC147',196,'16T0037','Cauvery'),('1RV17EE120',169,'06T0005','Cauvery'),('1RV17EE125',174,'95T0017','Cauvery'),('1RV17EE170',219,'98T0032','Cauvery'),('1RV17EI061',110,'99T0026','Cauvery'),('1RV17EI123',172,'11T0011','Cauvery'),('1RV17IS039',88,'12T0023','Cauvery'),('1RV17IS128',177,'12T0023','Cauvery'),('1RV17ME190',239,'12T0030','Cauvery'),('1RV17TE051',100,'11T0002','Cauvery'),('1RV17TE115',164,'96T0047','Cauvery'),('1RV18AS040',89,'99T0026','Cauvery'),('1RV18AS107',156,'10T0034','Cauvery'),('1RV18AS188',237,'12T0023','Cauvery'),('1RV18BT058',107,'13T0019','Cauvery'),('1RV18BT077',126,'01T0006','Cauvery'),('1RV18BT080',129,'13T0014','Cauvery'),('1RV18CH091',140,'05T0039','Cauvery'),('1RV18CH184',233,'13T0014','Cauvery'),('1RV18CS094',143,'01T0045','Cauvery'),('1RV18CS165',214,'13T0019','Cauvery'),('1RV18CV100',149,'95T0017','Cauvery'),('1RV18CV104',153,'99T0026','Cauvery'),('1RV18CV194',243,'09T0038','Cauvery'),('1RV18EC038',87,'99T0021','Cauvery'),('1RV18EC089',138,'16T0037','Cauvery'),('1RV18EC148',197,'09T0038','Cauvery'),('1RV18EE049',98,'01T0045','Cauvery'),('1RV18EE134',183,'06T0005','Cauvery'),('1RV18EE151',200,'96T0042','Cauvery'),('1RV18EE178',227,'07T0001','Cauvery'),('1RV18EI028',77,'06T0005','Cauvery'),('1RV18EI056',105,'13T0014','Cauvery'),('1RV18EI162',211,'11T0011','Cauvery'),('1RV18IS082',131,'13T0019','Cauvery'),('1RV18ME013',62,'12T0030','Cauvery'),('1RV18ME022',71,'01T0046','Cauvery'),('1RV18ME062',111,'12T0030','Cauvery'),('1RV18ME112',161,'96T0042','Cauvery'),('1RV18ME161',210,'98T0009','Cauvery'),('1RV18TE017',66,'09T0038','Cauvery');
+/*!40000 ALTER TABLE `HOSTELITE` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `KEY_PAIR`
+--
+
+DROP TABLE IF EXISTS `KEY_PAIR`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `KEY_PAIR` (
+  `Cupboard` int(11) NOT NULL,
+  `Door` int(11) DEFAULT NULL,
+  `Locker1` int(11) DEFAULT NULL,
+  `Locker2` int(11) DEFAULT NULL,
+  `Room_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Cupboard`),
+  KEY `keyroomfk` (`Room_id`),
+  CONSTRAINT `keyroomfk` FOREIGN KEY (`Room_id`) REFERENCES `ROOM` (`Room_id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `KEY_PAIR`
+--
+
+LOCK TABLES `KEY_PAIR` WRITE;
+/*!40000 ALTER TABLE `KEY_PAIR` DISABLE KEYS */;
+INSERT INTO `KEY_PAIR` VALUES (50,200,350,650,1),(51,201,351,651,1),(52,202,352,652,2),(53,203,353,653,2),(54,204,354,654,3),(55,205,355,655,3),(56,206,356,656,4),(57,207,357,657,4),(58,208,358,658,5),(59,209,359,659,5),(60,210,360,660,6),(61,211,361,661,6),(62,212,362,662,7),(63,213,363,663,7),(64,214,364,664,8),(65,215,365,665,8),(66,216,366,666,9),(67,217,367,667,9),(68,218,368,668,10),(69,219,369,669,10),(70,220,370,670,11),(71,221,371,671,11),(72,222,372,672,12),(73,223,373,673,12),(74,224,374,674,13),(75,225,375,675,13),(76,226,376,676,14),(77,227,377,677,14),(78,228,378,678,15),(79,229,379,679,15),(80,230,380,680,16),(81,231,381,681,16),(82,232,382,682,17),(83,233,383,683,17),(84,234,384,684,18),(85,235,385,685,18),(86,236,386,686,19),(87,237,387,687,19),(88,238,388,688,20),(89,239,389,689,20),(90,240,390,690,21),(91,241,391,691,21),(92,242,392,692,22),(93,243,393,693,22),(94,244,394,694,23),(95,245,395,695,23),(96,246,396,696,24),(97,247,397,697,24),(98,248,398,698,25),(99,249,399,699,25),(100,250,400,700,26),(101,251,401,701,26),(102,252,402,702,27),(103,253,403,703,27),(104,254,404,704,28),(105,255,405,705,28),(106,256,406,706,29),(107,257,407,707,29),(108,258,408,708,30),(109,259,409,709,30),(110,260,410,710,31),(111,261,411,711,31),(112,262,412,712,32),(113,263,413,713,32),(114,264,414,714,33),(115,265,415,715,33),(116,266,416,716,34),(117,267,417,717,34),(118,268,418,718,35),(119,269,419,719,35),(120,270,420,720,36),(121,271,421,721,36),(122,272,422,722,37),(123,273,423,723,37),(124,274,424,724,38),(125,275,425,725,38),(126,276,426,726,39),(127,277,427,727,39),(128,278,428,728,40),(129,279,429,729,40),(130,280,430,730,41),(131,281,431,731,41),(132,282,432,732,42),(133,283,433,733,42),(134,284,434,734,43),(135,285,435,735,43),(136,286,436,736,44),(137,287,437,737,44),(138,288,438,738,45),(139,289,439,739,45),(140,290,440,740,46),(141,291,441,741,46),(142,292,442,742,47),(143,293,443,743,47),(144,294,444,744,48),(145,295,445,745,48),(146,296,446,746,49),(147,297,447,747,49),(148,298,448,748,50),(149,299,449,749,50),(150,300,450,750,51),(151,301,451,751,51),(152,302,452,752,52),(153,303,453,753,52),(154,304,454,754,53),(155,305,455,755,53),(156,306,456,756,54),(157,307,457,757,54),(158,308,458,758,55),(159,309,459,759,55),(160,310,460,760,56),(161,311,461,761,56),(162,312,462,762,57),(163,313,463,763,57),(164,314,464,764,58),(165,315,465,765,58),(166,316,466,766,59),(167,317,467,767,59),(168,318,468,768,60),(169,319,469,769,60),(170,320,470,770,61),(171,321,471,771,61),(172,322,472,772,62),(173,323,473,773,62),(174,324,474,774,63),(175,325,475,775,63),(176,326,476,776,64),(177,327,477,777,64),(178,328,478,778,65),(179,329,479,779,65),(180,330,480,780,66),(181,331,481,781,66),(182,332,482,782,67),(183,333,483,783,67),(184,334,484,784,68),(185,335,485,785,68),(186,336,486,786,69),(187,337,487,787,69),(188,338,488,788,70),(189,339,489,789,70),(190,340,490,790,71),(191,341,491,791,71),(192,342,492,792,72),(193,343,493,793,72),(194,344,494,794,73),(195,345,495,795,73),(196,346,496,796,74),(197,347,497,797,74),(198,348,498,798,75),(199,349,499,799,75),(200,350,500,800,76),(201,351,501,801,76),(202,352,502,802,77),(203,353,503,803,77),(204,354,504,804,78),(205,355,505,805,78),(206,356,506,806,79),(207,357,507,807,79),(208,358,508,808,80),(209,359,509,809,80),(210,360,510,810,81),(211,361,511,811,81),(212,362,512,812,82),(213,363,513,813,82),(214,364,514,814,83),(215,365,515,815,83),(216,366,516,816,84),(217,367,517,817,84),(218,368,518,818,85),(219,369,519,819,85),(220,370,520,820,86),(221,371,521,821,86),(222,372,522,822,87),(223,373,523,823,87),(224,374,524,824,88),(225,375,525,825,88),(226,376,526,826,89),(227,377,527,827,89),(228,378,528,828,90),(229,379,529,829,90),(230,380,530,830,91),(231,381,531,831,91),(232,382,532,832,92),(233,383,533,833,92),(234,384,534,834,93),(235,385,535,835,93),(236,386,536,836,94),(237,387,537,837,94),(238,388,538,838,95),(239,389,539,839,95),(240,390,540,840,96),(241,391,541,841,96),(242,392,542,842,97),(243,393,543,843,97),(244,394,544,844,98),(245,395,545,845,98),(246,396,546,846,99),(247,397,547,847,99),(248,398,548,848,100),(249,399,549,849,100);
+/*!40000 ALTER TABLE `KEY_PAIR` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `LOCAL_GUARDIAN`
+--
+
+DROP TABLE IF EXISTS `LOCAL_GUARDIAN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `LOCAL_GUARDIAN` (
+  `USN` char(10) NOT NULL,
+  `Fname` varchar(20) DEFAULT NULL,
+  `Relation` varchar(10) DEFAULT NULL,
+  `Phone_no` char(10) DEFAULT NULL,
+  `Email_id` varchar(40) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `Lname` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`USN`),
+  CONSTRAINT `guardusnfk` FOREIGN KEY (`USN`) REFERENCES `HOSTELITE` (`USN`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `LOCAL_GUARDIAN`
+--
+
+LOCK TABLES `LOCAL_GUARDIAN` WRITE;
+/*!40000 ALTER TABLE `LOCAL_GUARDIAN` DISABLE KEYS */;
+INSERT INTO `LOCAL_GUARDIAN` VALUES ('1RV12BT124','Jackie','Sister','7509657415','jbrandon11@clickbank.net','P.O. Box 464, 675 Sed St., Clearwater Municipal District, Cameroon,305557,','Brandon'),('1RV12CH055','Kristan','Brother','7197911966','kcrumley1i@arstechnica.com','P.O. Box 244, 4709 Magnis Rd., Nashville, Moldova,78160,','Crumley'),('1RV12CH101','Harli','Sister','9337442868','hconverye@google.de','2934 Dolor Rd., Püttlingen, Korea, South,86737,','Convery'),('1RV12CH108','Gannon','Brother','3297796073','galflattl@slideshare.net','P.O. Box 538, 1863 Eget, St., High Wycombe, United States,5159','Alflatt'),('1RV12CH114','Sax','Brother','3506882651','splumleyr@hc360.com','Ap #569-4762 Amet Ave, Liverpool, Trinidad and Tobago,44864','Plumley'),('1RV12CH189','Durant','Sister','7410805013','dwinslettk@reverbnation.com','900-1676 In Av., Lang, Madagascar,5911','Winslett'),('1RV12CS012','Willamina','Father','5143025478','wbresnahanb@vkontakte.ru','Ap #352-3033 At Rd., Lo Espejo, Japan,80974','Bresnahan'),('1RV12CS041','Fonsie','Father','5057562827','fmartinek14@freewebs.com','Ap #352-3033 At Rd., Lo Espejo, Japan,80974','Martinek'),('1RV12CS110','Maddie','Sister','6792560405','mbyngn@dailymotion.com','957-7329 Eu Rd., Chiniot, Sao Tome and Principe,4772','Byng'),('1RV12EC047','Sheeree','Father','3273239123','speirpoint1a@plala.or.jp','5398 Sollicitudin St., Balen, Bahamas,21307','Peirpoint'),('1RV12EC183','Vincenz','Father','4318462196','vshopcott1b@phoca.cz','772-4596 Odio Road, Ashoknagar-Kalyangarh, Guam,96276','Shopcott'),('1RV12EE043','Fairlie','Brother','5104572013','ffinden16@desdev.cn','2934 Dolor Rd., Püttlingen, Korea, South,86737,','Finden'),('1RV12EE060','Elayne','Sister','5370677611','eloudyan1n@merriam-webster.com','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic,605109,','Loudyan'),('1RV12EI066','Artur','Uncle','4676068336','adrinkale1t@hud.gov','Ap #367-7237 Sem. Av., Biez, Taiwan,26562','Drinkale'),('1RV12EI086','Cordi','Sister','8385510931','ccoolahan2d@diigo.com','P.O. Box 480, 9817 Eleifend, St., Castiglione di Sicilia, Bouvet Island,344801','Coolahan'),('1RV12EI143','Livvy','Brother','3924363668','lgoodbourn26@g.co','P.O. Box 462, 1817 Aliquet Road, Grey County, Austria,7407,','Goodbourn'),('1RV12EI144','Ashien','Sister','4525943289','aburkwood27@ucoz.ru','9429 Fusce Av., Compiano, Morocco,748499','Burkwood'),('1RV12EI157','Madalyn','Brother','7872058588','mdady29@indiegogo.com','6018 Porta Street, Cagli, Liberia,51510','Dady'),('1RV12IS021','Durant','Uncle','7410805013','dwinslettk@reverbnation.com','P.O. Box 538, 1863 Eget, St., High Wycombe, United States,5159','Winslett'),('1RV12IS027','Aloin','Sister','7220477473','aharmstoneq@soup.io','Ap #569-4762 Amet Ave, Liverpool, Trinidad and Tobago,44864','Harmstone'),('1RV12IS034','Virge','Father','8541227286','vwitheringtonx@wikispaces.com','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands,78658','Witherington'),('1RV12IS052','Mia','Father','5488319212','mbrompton1f@phpbb.com','957-7329 Eu Rd., Chiniot, Sao Tome and Principe,4772','Brompton'),('1RV12IS065','Daven','Sister','5363478625','dmaclachlan1s@nbcnews.com','Ap #565-9769 Erat St., Lafayette, Portugal,5913','MacLachlan'),('1RV12IS092','Florida','Father','7844031077','fdeblase5@livejournal.com','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands,78658','De Blase'),('1RV12IS103','Ezri','Brother','4185420870','ekovelmanng@nydailynews.com','920-2587 Rutrum St., Montleban, Saint Martin,2144','Kovelmann'),('1RV12ME116','Marchelle','Sister','6539616996','mmerckt@123-reg.co.uk','4523 Nec St., Enterprise, Syria,451305','Merck'),('1RV12TE011','Janos','Father','913958735','jconnicka@360.cn','1665 Mattis Street, Cavaion Veronese, Bonaire, Sint Eustatius and Saba,662091,','Connick'),('1RV12TE037','Blakelee','Sister','8347702772','bnote10@example.com','Ap #367-7237 Sem. Av., Biez, Taiwan,26562','Note'),('1RV12TE113','Aloin','Father','7220477473','aharmstoneq@soup.io','P.O. Box 244, 4709 Magnis Rd., Nashville, Moldova,78160,','Harmstone'),('1RV12TE137','Hamish','Uncle','2255297507','hnaisbitt1e@1688.com','583-2869 Ornare, Rd., Maple Ridge, Congo, the Democratic Republic of the,51402','Naisbitt'),('1RV13AS176','Durant','Sister','7410805013','dwinslettk@reverbnation.com','Ap #647-9379 In Av., St. Albans, Namibia,218605','Winslett'),('1RV13BT079','Livvy','Sister','3924363668','lgoodbourn26@g.co','P.O. Box 538, 1863 Eget, St., High Wycombe, United States,5159','Goodbourn'),('1RV13CH005','Anica','Mother','9521108630','ahussell4@uiuc.edu','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands,78658','Hussell'),('1RV13CH014','Emmey','Brother','3674101157','educkettd@springer.com','2934 Dolor Rd., Püttlingen, Korea, South,86737,','Duckett'),('1RV13CH105','Ambros','Sister','6631989302','asantoi@t.co','5398 Sollicitudin St., Balen, Bahamas,21307','Santo'),('1RV13CH163','Durant','Father','7410805013','dwinslettk@reverbnation.com','199-3738 Tincidunt Rd., Lleida, Netherlands,8325','Winslett'),('1RV13CH197','Alisander','Father','7727846236','aarrighi1k@tumblr.com','2659 Ac Rd., Rupelmonde, Estonia,4884','Arrighi'),('1RV13CS036','Foster','Brother','7787880538','ftonnz@google.de','Ap #565-9769 Erat St., Lafayette, Portugal,5913','Tonn'),('1RV13CS088','Kahlil','Brother','1182119506','keltun1@bluehost.com','Ap #537-8409 Sed St., Merzig, Micronesia,59552','Eltun'),('1RV13CS171','Alisander','Father','7727846236','aarrighi1k@tumblr.com','Ap #352-3033 At Rd., Lo Espejo, Japan,80974','Arrighi'),('1RV13CV002','Kahlil','Father','1182119506','keltun1@bluehost.com','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic,605109,','Eltun'),('1RV13CV109','Ephrayim','Sister','6882258201','ebachellierm@smugmug.com','P.O. Box 375, 3945 Nam Street, Meugliano, Djibouti,6671,','Bachellier'),('1RV13CV154','Livvy','Sister','3924363668','lgoodbourn26@g.co','P.O. Box 554, 7045 Aenean St., St. Catharines, Seychelles,514573,','Goodbourn'),('1RV13CV191','Philip','Father','3694828419','pdigweedw@ucla.edu','Ap #624-696 Ac, Street, Adana, Mexico,8628,','Digweed'),('1RV13EC010','Livvyy','Uncle','7973155171','lstainer9@google.es','7251 Est, Road, Rhisnes, Mexico,63790,','Stainer'),('1RV13EC106','Aimil','Father','5774096505','afrazerj@blinklist.com','Ap #122-7016 Mauris Ave, Arles, Sint Maarten,7162','Frazer'),('1RV13EC152','Innis','Sister','6277938460','ivigours24@wordpress.org','P.O. Box 886, 902 Augue Rd., Dornoch, Gambia,67712,','Vigours'),('1RV13EE004','Jakob','Mother','6799477759','jbeeze3@huffingtonpost.com','199-3738 Tincidunt Rd., Lleida, Netherlands,8325','Beeze'),('1RV13EE008','Fin','Mother','4540925741','fblatherwick7@newsvine.com','Ap #367-7237 Sem. Av., Biez, Taiwan,26562','Blatherwick'),('1RV13EE138','Mia','Brother','5488319212','mbrompton1f@phpbb.com','Ap #600-6636 Nullam Road, Ahmadnagar, El Salvador,80596','Brompton'),('1RV13EI042','Elias','Father','9051825870','estansfield15@loc.gov','4449 Donec Ave, Schore, Ecuador,939772','Stansfield'),('1RV13EI159','Joycelin','Sister','697111768','jsamarth2b@sciencedaily.com','184-3575 Proin Avenue, Ludhiana, Argentina,7770','Samarth'),('1RV13IS045','Caresse','Sister','7443339224','cculbard18@java.com','920-2587 Rutrum St., Montleban, Saint Martin,2144','Culbard'),('1RV13IS046','Rolando','Father','9877130777','rparkey19@icio.us','Ap #647-9379 In Av., St. Albans, Namibia,218605','Parkey'),('1RV13IS074','Eddie','Sister','5943226052','ecapini21@apache.org','920-2587 Rutrum St., Montleban, Saint Martin,2144','Capini'),('1RV13IS140','Kassi','Sister','1162019425','kbassick23@uiuc.edu','Ap #329-4563 Eget Road, Burntisland, Montenegro,304313','Bassick'),('1RV13IS150','Cordi','Brother','8385510931','ccoolahan2d@diigo.com','688-6589 Morbi Street, Ruette, Honduras,17124','Coolahan'),('1RV13IS168','Foster','Uncle','7787880538','ftonnz@google.de','2403 Sit St., Nacimiento, Bangladesh,7811','Tonn'),('1RV13IS175','Aimil','Sister','5774096505','afrazerj@blinklist.com','920-2587 Rutrum St., Montleban, Saint Martin,2144','Frazer'),('1RV13IS187','Ephrem','Sister','9626787953','estaner1y@washington.edu','P.O. Box 480, 9817 Eleifend, St., Castiglione di Sicilia, Bouvet Island,344801','Staner'),('1RV13ME016','Katya','Sister','2649357282','kbreitf@ibm.com','920-2587 Rutrum St., Montleban, Saint Martin,2144','Breit'),('1RV13ME096','Livvyy','Uncle','7973155171','lstainer9@google.es','2403 Sit St., Nacimiento, Bangladesh,7811','Stainer'),('1RV13ME111','Danie','Uncle','2819778178','dscollio@cbsnews.com','772-4596 Odio Road, Ashoknagar-Kalyangarh, Guam,96276','Scolli'),('1RV13ME174','Ephrem','Sister','9626787953','estaner1y@washington.edu','181 Ornare Street, Proddatur, Madagascar,5713','Staner'),('1RV13ME179','Virge','Brother','8541227286','vwitheringtonx@wikispaces.com','Ap #833-3470 Lectus Rd., Cinco Esquinas, Gabon,527','Witherington'),('1RV13ME192','Virge','Father','8541227286','vwitheringtonx@wikispaces.com','P.O. Box 984, 7493 Sed Road, Recife, Cayman Islands,869871,','Witherington'),('1RV13TE025','Danie','Brother','2819778178','dscollio@cbsnews.com','612-2254 Imperdiet St., Campomarino, Heard Island and Mcdonald Islands,55790','Scolli'),('1RV13TE118','Spencer','Sister','2669103456','smcterlaghv@jimdo.com','6893 Amet Rd., Fossato di Vico, Singapore,31319','McTerlagh'),('1RV13TE135','Elbert','Sister','1381777791','erudderham1c@wikimedia.org','P.O. Box 708, 3291 Lorem Avenue, North Bay, Solomon Islands,7907,','Rudderham'),('1RV13TE142','Benton','Father','4068021392','bstollberg25@virginia.edu','9393 Tempus, Av., Durham, Nepal,9528,','Stollberg'),('1RV13TE153','Benton','Sister','4068021392','bstollberg25@virginia.edu','Ap #114-1558 Dolor Rd., Lauder, Norway,437258','Stollberg'),('1RV13TE181','Foster','Sister','7787880538','ftonnz@google.de','P.O. Box 375, 3945 Nam Street, Meugliano, Djibouti,6671,','Tonn'),('1RV13TE186','Daven','Brother','5363478625','dmaclachlan1s@nbcnews.com','Ap #569-4762 Amet Ave, Liverpool, Trinidad and Tobago,44864','MacLachlan'),('1RV13TE193','Rip','Brother','1913416712','rlevicky@issuu.com','987-2779 Vivamus Rd., Offenbach am Main, Jamaica,917472','Levick'),('1RV14AS007','Tressa','Mother','1169093442','tskey6@t.co','Ap #565-9769 Erat St., Lafayette, Portugal,5913','Skey'),('1RV14AS090','Jakob','Sister','6799477759','jbeeze3@huffingtonpost.com','3463 Risus Rd., Etobicoke, Western Sahara,2495','Beeze'),('1RV14AS122','Foster','Brother','7787880538','ftonnz@google.de','7116 Et, St., Dehri, Saint Barthélemy,69505,','Tonn'),('1RV14AS173','Daven','Sister','5363478625','dmaclachlan1s@nbcnews.com','2934 Dolor Rd., Püttlingen, Korea, South,86737,','MacLachlan'),('1RV14AS177','Spencer','Father','2669103456','smcterlaghv@jimdo.com','5398 Sollicitudin St., Balen, Bahamas,21307','McTerlagh'),('1RV14BT001','Katha','Uncle','7974279877','kceschelli0@amazonaws.com','Ap #537-8409 Sed St., Merzig, Micronesia,59552','Ceschelli'),('1RV14BT073','Dorthy','Brother','9397872729','dgiuron20@yellowbook.com','181 Ornare Street, Proddatur, Madagascar,5713','Giuron'),('1RV14CH195','Blakelee','Sister','8347702772','bnote10@example.com','534-6603 Tortor. Ave, Paglieta, Kazakhstan,1400','Note'),('1RV14CS068','Gianina','Father','6307750251','ghamflett1v@huffingtonpost.com','7251 Est, Road, Rhisnes, Mexico,63790,','Hamflett'),('1RV14EC026','Ellen','Sister','2319838724','elarhamp@ted.com','P.O. Box 244, 4709 Magnis Rd., Nashville, Moldova,78160,','Larham'),('1RV14EC030','Marchelle','Mother','6539616996','mmerckt@123-reg.co.uk','Ap #537-8409 Sed St., Merzig, Micronesia,59552','Merck'),('1RV14EE003','Holden','Mother','2401508759','hkleisle2@altervista.org','3463 Risus Rd., Etobicoke, Western Sahara,2495','Kleisle'),('1RV14EE064','Kliment','Sister','1732012563','kstranks1r@state.gov','P.O. Box 844, 2291 Arcu Ave, Lawton, Hungary,33250,','Stranks'),('1RV14EE127','Fonsie','Brother','5057562827','fmartinek14@freewebs.com','Ap #544-9431 Vel, Street, Montigny-lès-Metz, Saint Kitts and Nevis,4191,','Martinek'),('1RV14EI083','Claudette','Father','1567159486','cgarron2a@mit.edu','612-2254 Imperdiet St., Campomarino, Heard Island and Mcdonald Islands,55790','Garron'),('1RV14EI145','Thaddeus','Sister','6586739322','tmckiddin28@home.pl','Ap #798-5501 Aliquet St., Godhra, Reunion,7462','McKiddin'),('1RV14IS072','Shalom','Sister','8021624825','sfleetham1z@typepad.com','2934 Dolor Rd., Püttlingen, Korea, South,86737,','Fleetham'),('1RV14IS198','Mel','Father','1660751470','mbroker1l@earthlink.net','Ap #437-6862 Dolor Street, Tocopilla, Maldives,83782','Broker'),('1RV14ME078','Benton','Brother','4068021392','bstollberg25@virginia.edu','Ap #833-3470 Lectus Rd., Cinco Esquinas, Gabon,527','Stollberg'),('1RV14ME117','Teressa','Brother','3938069627','tleseru@behance.net','900-1676 In Av., Lang, Madagascar,5911','Leser'),('1RV14TE044','Olia','Sister','5222352730','omallock17@wunderground.com','181 Ornare Street, Proddatur, Madagascar,5713','Mallock'),('1RV14TE050','Beulah','Sister','9255964313','bmartyntsev1d@netlog.com','P.O. Box 538, 1863 Eget, St., High Wycombe, United States,5159','Martyntsev'),('1RV14TE067','Issie','Father','6490056283','ipinckney1u@ustream.tv','2403 Sit St., Nacimiento, Bangladesh,7811','Pinckney'),('1RV14TE097','Janos','Father','913958735','jconnicka@360.cn','7251 Est, Road, Rhisnes, Mexico,63790,','Connick'),('1RV14TE166','Virge','Sister','8541227286','vwitheringtonx@wikispaces.com','Ap #565-9769 Erat St., Lafayette, Portugal,5913','Witherington'),('1RV14TE196','Vincenz','Uncle','4318462196','vshopcott1b@phoca.cz','P.O. Box 464, 675 Sed St., Clearwater Municipal District, Cameroon,305557,','Shopcott'),('1RV15AS102','Katya','Sister','2649357282','kbreitf@ibm.com','181 Ornare Street, Proddatur, Madagascar,5713','Breit'),('1RV15BT069','Maximilianus','Father','5914376947','mnisbith1w@oaic.gov.au','1665 Mattis Street, Cavaion Veronese, Bonaire, Sint Eustatius and Saba,662091,','Nisbith'),('1RV15BT071','Ephrem','Sister','9626787953','estaner1y@washington.edu','4449 Donec Ave, Schore, Ecuador,939772','Staner'),('1RV15BT076','Kassi','Father','1162019425','kbassick23@uiuc.edu','5398 Sollicitudin St., Balen, Bahamas,21307','Bassick'),('1RV15BT121','Rip','Father','1913416712','rlevicky@issuu.com','987-2779 Vivamus Rd., Offenbach am Main, Jamaica,917472','Levick'),('1RV15BT182','Blakelee','Uncle','8347702772','bnote10@example.com','957-7329 Eu Rd., Chiniot, Sao Tome and Principe,4772','Note'),('1RV15CH048','Vincenz','Brother','4318462196','vshopcott1b@phoca.cz','Ap #122-7016 Mauris Ave, Arles, Sint Maarten,7162','Shopcott'),('1RV15CH087','Katha','Sister','7974279877','kceschelli0@amazonaws.com','4523 Nec St., Enterprise, Syria,451305','Ceschelli'),('1RV15CH095','Cora','Sister','2857236107','cadamowitz8@webs.com','Ap #367-7237 Sem. Av., Biez, Taiwan,26562','Adamowitz'),('1RV15CH126','Yul','Father','639605680','ypires13@google.co.jp','Ap #437-6862 Dolor Street, Tocopilla, Maldives,83782','Pires'),('1RV15CS009','Cora','Uncle','2857236107','cadamowitz8@webs.com','2403 Sit St., Nacimiento, Bangladesh,7811','Adamowitz'),('1RV15CS139','Adriaens','Sister','2923003853','allywarch1g@time.com','542-3272 Nulla Av., Kukatpalle, Central African Republic,51091','Llywarch'),('1RV15CS149','Kania','Father','7527818417','kcowup2c@addtoany.com','797-8375 Dui, St., Merthyr Tydfil, Reunion,552633,','Cowup'),('1RV15CS180','Rip','Sister','1913416712','rlevicky@issuu.com','P.O. Box 538, 1863 Eget, St., High Wycombe, United States,5159','Levick'),('1RV15CV035','Rip','Father','1913416712','rlevicky@issuu.com','P.O. Box 844, 2291 Arcu Ave, Lawton, Hungary,33250,','Levick'),('1RV15CV093','Tressa','Brother','1169093442','tskey6@t.co','P.O. Box 844, 2291 Arcu Ave, Lawton, Hungary,33250,','Skey'),('1RV15CV133','Sheeree','Father','3273239123','speirpoint1a@plala.or.jp','P.O. Box 335, 546 Amet, Av., Bhubaneswar, Algeria,51605','Peirpoint'),('1RV15CV146','Madalyn','Uncle','7872058588','mdady29@indiegogo.com','Ap #918-1646 Interdum Avenue, Ambattur, Bulgaria,160137','Dady'),('1RV15CV200','Ephrem','Brother','9626787953','estaner1y@washington.edu','3928 Nullam Street, Machilipatnam, Saint Lucia,104693','Staner'),('1RV15EI057','Alisander','Sister','7727846236','aarrighi1k@tumblr.com','P.O. Box 480, 9817 Eleifend, St., Castiglione di Sicilia, Bouvet Island,344801','Arrighi'),('1RV15EI130','Olia','Sister','5222352730','omallock17@wunderground.com','2499 Sit Avenue, Derby, Lesotho,20743','Mallock'),('1RV15EI199','Daven','Father','5363478625','dmaclachlan1s@nbcnews.com','Ap #544-9431 Vel, Street, Montigny-lès-Metz, Saint Kitts and Nevis,4191,','MacLachlan'),('1RV15IS070','Barny','Brother','5806686612','btender1x@house.gov','Ap #352-3033 At Rd., Lo Espejo, Japan,80974','Tender'),('1RV15IS081','Thaddeus','Uncle','6586739322','tmckiddin28@home.pl','957-7329 Eu Rd., Chiniot, Sao Tome and Principe,4772','McKiddin'),('1RV15IS158','Claudette','Sister','1567159486','cgarron2a@mit.edu','Ap #506-9292 Lectus Road, Gembloux, Zambia,8865','Garron'),('1RV15ME075','Ravid','Sister','3489204123','rdarracott22@wordpress.org','Ap #647-9379 In Av., St. Albans, Namibia,218605','Darracott'),('1RV15ME141','Innis','Father','6277938460','ivigours24@wordpress.org','1688 Curae; St., Grand-Manil, Panama,7184','Vigours'),('1RV15TE033','Philip','Father','3694828419','pdigweedw@ucla.edu','199-3738 Tincidunt Rd., Lleida, Netherlands,8325','Digweed'),('1RV15TE172','Mel','Brother','1660751470','mbroker1l@earthlink.net','4449 Donec Ave, Schore, Ecuador,939772','Broker'),('1RV16AS006','Florida','Mother','7844031077','fdeblase5@livejournal.com','P.O. Box 844, 2291 Arcu Ave, Lawton, Hungary,33250,','De Blase'),('1RV16AS020','Aimil','Uncle','5774096505','afrazerj@blinklist.com','Ap #833-3470 Lectus Rd., Cinco Esquinas, Gabon,527','Frazer'),('1RV16AS053','Adriaens','Father','2923003853','allywarch1g@time.com','772-4596 Odio Road, Ashoknagar-Kalyangarh, Guam,96276','Llywarch'),('1RV16AS155','Ashien','Father','4525943289','aburkwood27@ucoz.ru','P.O. Box 987, 2865 Aptent Street, Freux, Marshall Islands,15761,','Burkwood'),('1RV16BT156','Thaddeus','Father','6586739322','tmckiddin28@home.pl','4621 Odio. St., Zuccarello, Sint Maarten,9101','McKiddin'),('1RV16CH084','Joycelin','Father','697111768','jsamarth2b@sciencedaily.com','P.O. Box 244, 4709 Magnis Rd., Nashville, Moldova,78160,','Samarth'),('1RV16CS164','Spencer','Brother','2669103456','smcterlaghv@jimdo.com','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands,78658','McTerlagh'),('1RV16EC099','Ursa','Father','8310922132','uconsterdinec@dailymail.co.uk','Ap #352-3033 At Rd., Lo Espejo, Japan,80974','Consterdine'),('1RV16EI029','Vivianne','Mother','2530572879','vcorkells@google.pl','4523 Nec St., Enterprise, Syria,451305','Corkell'),('1RV16EI129','Fairlie','Brother','5104572013','ffinden16@desdev.cn','265-2879 Eu Av., Wrexham, Sao Tome and Principe,20635','Finden'),('1RV16EI131','Caresse','Sister','7443339224','cculbard18@java.com','P.O. Box 283, 3985 Eu Avenue, Saint-Nazaire, Norfolk Island,41894,','Culbard'),('1RV16EI136','Beulah','Sister','9255964313','bmartyntsev1d@netlog.com','Ap #347-7054 Taciti St., Brampton, Djibouti,64627','Martyntsev'),('1RV16IS098','Willamina','Father','5143025478','wbresnahanb@vkontakte.ru','1665 Mattis Street, Cavaion Veronese, Bonaire, Sint Eustatius and Saba,662091,','Bresnahan'),('1RV16ME085','Kania','Brother','7527818417','kcowup2c@addtoany.com','Ap #569-4762 Amet Ave, Liverpool, Trinidad and Tobago,44864','Cowup'),('1RV16TE018','Raddie','Mother','6733922843','rtregiddoh@china.com.cn','5398 Sollicitudin St., Balen, Bahamas,21307','Tregiddo'),('1RV16TE059','Brucie','Sister','7585483694','bkulicke1m@nifty.com','Ap #537-8409 Sed St., Merzig, Micronesia,59552','Kulicke'),('1RV16TE185','Mel','Father','1660751470','mbroker1l@earthlink.net','P.O. Box 244, 4709 Magnis Rd., Nashville, Moldova,78160,','Broker'),('1RV17AS019','Ambros','Mother','6631989302','asantoi@t.co','Ap #122-7016 Mauris Ave, Arles, Sint Maarten,7162','Santo'),('1RV17AS119','Philip','Sister','3694828419','pdigweedw@ucla.edu','Ap #624-696 Ac, Street, Adana, Mexico,8628,','Digweed'),('1RV17AS167','Rip','Sister','1913416712','rlevicky@issuu.com','Ap #367-7237 Sem. Av., Biez, Taiwan,26562','Levick'),('1RV17AS169','Blakelee','Father','8347702772','bnote10@example.com','7251 Est, Road, Rhisnes, Mexico,63790,','Note'),('1RV17BT063','Dalila','Brother','2211175031','dlackmann1q@phpbb.com','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands,78658','Lackmann'),('1RV17BT132','Rolando','Father','9877130777','rparkey19@icio.us','4792 Integer Ave, Montrose, Ukraine,71968','Parkey'),('1RV17BT160','Kania','Uncle','7527818417','kcowup2c@addtoany.com','Ap #537-8409 Sed St., Merzig, Micronesia,59552','Cowup'),('1RV17CH031','Teressa','Uncle','3938069627','tleseru@behance.net','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic,605109,','Leser'),('1RV17CH032','Spencer','Uncle','2669103456','smcterlaghv@jimdo.com','3463 Risus Rd., Etobicoke, Western Sahara,2495','McTerlagh'),('1RV17CS015','Harli','Sister','9337442868','hconverye@google.de','181 Ornare Street, Proddatur, Madagascar,5713','Convery'),('1RV17CS024','Maddie','Father','6792560405','mbyngn@dailymotion.com','772-4596 Odio Road, Ashoknagar-Kalyangarh, Guam,96276','Byng'),('1RV17CV054','Erhard','Father','1105658732','emayes1h@blogspot.com','612-2254 Imperdiet St., Campomarino, Heard Island and Mcdonald Islands,55790','Mayes'),('1RV17EC023','Ephrayim','Father','6882258201','ebachellierm@smugmug.com','957-7329 Eu Rd., Chiniot, Sao Tome and Principe,4772','Bachellier'),('1RV17EC147','Claudette','Father','1567159486','cgarron2a@mit.edu','Ap #985-9808 Lobortis. Road, Dibrugarh, United States Minor Outlying Islands,3829','Garron'),('1RV17EE120','Virge','Father','8541227286','vwitheringtonx@wikispaces.com','P.O. Box 984, 7493 Sed Road, Recife, Cayman Islands,869871,','Witherington'),('1RV17EE125','Durant','Father','1772995223','dbalding12@state.tx.us','2659 Ac Rd., Rupelmonde, Estonia,4884','Balding'),('1RV17EE170','Vincenz','Father','4318462196','vshopcott1b@phoca.cz','1665 Mattis Street, Cavaion Veronese, Bonaire, Sint Eustatius and Saba,662091,','Shopcott'),('1RV17EI061','Carlyn','Father','978695763','cdcosta1o@lulu.com','3463 Risus Rd., Etobicoke, Western Sahara,2495','D\'Costa'),('1RV17EI123','Blakelee','Sister','8347702772','bnote10@example.com','534-6603 Tortor. Ave, Paglieta, Kazakhstan,1400','Note'),('1RV17IS039','Durant','Uncle','1772995223','dbalding12@state.tx.us','7251 Est, Road, Rhisnes, Mexico,63790,','Balding'),('1RV17IS128','Elias','Sister','9051825870','estansfield15@loc.gov','3928 Nullam Street, Machilipatnam, Saint Lucia,104693','Stansfield'),('1RV17ME190','Spencer','Sister','2669103456','smcterlaghv@jimdo.com','6893 Amet Rd., Fossato di Vico, Singapore,31319','McTerlagh'),('1RV17TE051','Hamish','Uncle','2255297507','hnaisbitt1e@1688.com','P.O. Box 375, 3945 Nam Street, Meugliano, Djibouti,6671,','Naisbitt'),('1RV17TE115','Vivianne','Sister','2530572879','vcorkells@google.pl','P.O. Box 480, 9817 Eleifend, St., Castiglione di Sicilia, Bouvet Island,344801','Corkell'),('1RV18AS040','Yul','Father','639605680','ypires13@google.co.jp','1665 Mattis Street, Cavaion Veronese, Bonaire, Sint Eustatius and Saba,662091,','Pires'),('1RV18AS107','Durant','Father','7410805013','dwinslettk@reverbnation.com','Ap #833-3470 Lectus Rd., Cinco Esquinas, Gabon,527','Winslett'),('1RV18AS188','Aimil','Sister','5774096505','afrazerj@blinklist.com','4523 Nec St., Enterprise, Syria,451305','Frazer'),('1RV18BT058','Mel','Brother','1660751470','mbroker1l@earthlink.net','4523 Nec St., Enterprise, Syria,451305','Broker'),('1RV18BT077','Innis','Father','6277938460','ivigours24@wordpress.org','Ap #122-7016 Mauris Ave, Arles, Sint Maarten,7162','Vigours'),('1RV18BT080','Ashien','Sister','4525943289','aburkwood27@ucoz.ru','P.O. Box 375, 3945 Nam Street, Meugliano, Djibouti,6671,','Burkwood'),('1RV18CH091','Anica','Father','9521108630','ahussell4@uiuc.edu','199-3738 Tincidunt Rd., Lleida, Netherlands,8325','Hussell'),('1RV18CH184','Alisander','Father','7727846236','aarrighi1k@tumblr.com','612-2254 Imperdiet St., Campomarino, Heard Island and Mcdonald Islands,55790','Arrighi'),('1RV18CS094','Fin','Sister','4540925741','fblatherwick7@newsvine.com','Ap #565-9769 Erat St., Lafayette, Portugal,5913','Blatherwick'),('1RV18CS165','Philip','Sister','3694828419','pdigweedw@ucla.edu','P.O. Box 844, 2291 Arcu Ave, Lawton, Hungary,33250,','Digweed'),('1RV18CV100','Emmey','Brother','3674101157','educkettd@springer.com','4449 Donec Ave, Schore, Ecuador,939772','Duckett'),('1RV18CV104','Raddie','Sister','6733922843','rtregiddoh@china.com.cn','Ap #647-9379 In Av., St. Albans, Namibia,218605','Tregiddo'),('1RV18CV194','Foster','Sister','7787880538','ftonnz@google.de','7116 Et, St., Dehri, Saint Barthélemy,69505,','Tonn'),('1RV18EC038','Jackie','Sister','7509657415','jbrandon11@clickbank.net','2403 Sit St., Nacimiento, Bangladesh,7811','Brandon'),('1RV18EC089','Holden','Sister','2401508759','hkleisle2@altervista.org','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic,605109,','Kleisle'),('1RV18EC148','Joycelin','Father','697111768','jsamarth2b@sciencedaily.com','855-3190 Ligula St., Ostra Vetere, Spain,63999','Samarth'),('1RV18EE049','Elbert','Sister','1381777791','erudderham1c@wikimedia.org','Ap #833-3470 Lectus Rd., Cinco Esquinas, Gabon,527','Rudderham'),('1RV18EE134','Vincenz','Brother','4318462196','vshopcott1b@phoca.cz','8462 Lobortis, St., Guadalupe, Bangladesh,78721,','Shopcott'),('1RV18EE151','Kassi','Sister','1162019425','kbassick23@uiuc.edu','Ap #868-8429 Velit. Rd., Columbia, Isle of Man,15932','Bassick'),('1RV18EE178','Philip','Father','3694828419','pdigweedw@ucla.edu','Ap #122-7016 Mauris Ave, Arles, Sint Maarten,7162','Digweed'),('1RV18EI028','Sax','Mother','3506882651','splumleyr@hc360.com','P.O. Box 480, 9817 Eleifend, St., Castiglione di Sicilia, Bouvet Island,344801','Plumley'),('1RV18EI056','Beryl','Sister','3307919660','bdainty1j@ucsd.edu','Ap #569-4762 Amet Ave, Liverpool, Trinidad and Tobago,44864','Dainty'),('1RV18EI162','Aimil','Father','5774096505','afrazerj@blinklist.com','3463 Risus Rd., Etobicoke, Western Sahara,2495','Frazer'),('1RV18IS082','Madalyn','Father','7872058588','mdady29@indiegogo.com','772-4596 Odio Road, Ashoknagar-Kalyangarh, Guam,96276','Dady'),('1RV18ME013','Ursa','Father','8310922132','uconsterdinec@dailymail.co.uk','4449 Donec Ave, Schore, Ecuador,939772','Consterdine'),('1RV18ME022','Gannon','Father','3297796073','galflattl@slideshare.net','P.O. Box 375, 3945 Nam Street, Meugliano, Djibouti,6671,','Alflatt'),('1RV18ME062','Jard','Father','4067317026','jlockton1p@patch.com','199-3738 Tincidunt Rd., Lleida, Netherlands,8325','Lockton'),('1RV18ME112','Ellen','Father','2319838724','elarhamp@ted.com','612-2254 Imperdiet St., Campomarino, Heard Island and Mcdonald Islands,55790','Larham'),('1RV18ME161','Cordi','Father','8385510931','ccoolahan2d@diigo.com','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic,605109,','Coolahan'),('1RV18TE017','Ezri','Mother','4185420870','ekovelmanng@nydailynews.com','Ap #647-9379 In Av., St. Albans, Namibia,218605','Kovelmann');
+/*!40000 ALTER TABLE `LOCAL_GUARDIAN` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `MESS`
+--
+
+DROP TABLE IF EXISTS `MESS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MESS` (
+  `Mess_name` varchar(10) NOT NULL DEFAULT 'Cauvery',
+  `Capacity` int(11) DEFAULT NULL,
+  `Menu` blob,
+  `Hostel_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Mess_name`),
+  KEY `hosfk` (`Hostel_id`),
+  CONSTRAINT `hosfk` FOREIGN KEY (`Hostel_id`) REFERENCES `HOSTEL` (`Hostel_id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MESS`
+--
+
+LOCK TABLES `MESS` WRITE;
+/*!40000 ALTER TABLE `MESS` DISABLE KEYS */;
+INSERT INTO `MESS` VALUES ('Cauvery',1200,NULL,1);
+/*!40000 ALTER TABLE `MESS` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `NON_ADMIN`
+--
+
+DROP TABLE IF EXISTS `NON_ADMIN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `NON_ADMIN` (
+  `Emp_id` char(7) NOT NULL,
+  `Hostel_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Emp_id`),
+  KEY `hosnonadmfk` (`Hostel_id`),
+  CONSTRAINT `hosnonadmfk` FOREIGN KEY (`Hostel_id`) REFERENCES `HOSTEL` (`Hostel_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `nonadmempfk` FOREIGN KEY (`Emp_id`) REFERENCES `EMPLOYEE` (`Emp_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `NON_ADMIN`
+--
+
+LOCK TABLES `NON_ADMIN` WRITE;
+/*!40000 ALTER TABLE `NON_ADMIN` DISABLE KEYS */;
+INSERT INTO `NON_ADMIN` VALUES ('01N0076',0),('06N0015',0),('06N0074',0),('08N0070',0),('13N0073',0),('00N0010',1),('02N0020',1),('02N0058',1),('02N0072',1),('03N0022',1),('04N0012',1),('04N0018',1),('05N0023',1),('05N0028',1),('05N0031',1),('05N0057',1),('06N0019',1),('06N0038',1),('06N0048',1),('08N0014',1),('08N0024',1),('09N0059',1),('10N0017',1),('10N0056',1),('11N0035',1),('11N0042',1),('13N0009',1),('13N0013',1),('13N0016',1),('16N0060',1),('16N0077',1),('17N0066',1),('97N0021',1),('99N0011',1),('99N0043',1),('00N0054',2),('01N0032',2),('01N0034',2),('02N0053',2),('03N0027',2),('03N0047',2),('05N0036',2),('06N0049',2),('07N0055',2),('08N0044',2),('10N0071',2),('11N0025',2),('12N0029',2),('12N0067',2),('16N0068',2),('96N0039',2),('98N0065',2),('00N0063',3),('01N0050',3),('01N0052',3),('06N0033',3),('06N0046',3),('08N0037',3),('08N0040',3),('08N0041',3),('09N0061',3),('11N0026',3),('11N0062',3),('13N0030',3),('14N0045',3),('96N0064',3),('96N0075',3),('99N0051',3),('99N0069',3);
+/*!40000 ALTER TABLE `NON_ADMIN` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ROOM`
+--
+
+DROP TABLE IF EXISTS `ROOM`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ROOM` (
+  `Room_id` int(11) NOT NULL,
+  `Room_no` int(11) DEFAULT NULL,
+  `Block` char(1) DEFAULT NULL,
+  `Hostel_id` int(11) DEFAULT NULL,
+  `Students` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Room_id`),
+  KEY `roomhostelfk` (`Hostel_id`),
+  CONSTRAINT `roomhostelfk` FOREIGN KEY (`Hostel_id`) REFERENCES `HOSTEL` (`Hostel_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ROOM`
+--
+
+LOCK TABLES `ROOM` WRITE;
+/*!40000 ALTER TABLE `ROOM` DISABLE KEYS */;
+INSERT INTO `ROOM` VALUES (0,0,'E',0,0),(1,101,'A',1,2),(2,102,'A',1,2),(3,103,'A',1,2),(4,104,'A',1,2),(5,105,'A',1,2),(6,106,'A',1,2),(7,101,'B',1,2),(8,102,'B',1,2),(9,103,'B',1,2),(10,104,'B',1,2),(11,105,'B',1,2),(12,106,'B',1,2),(13,101,'C',1,2),(14,102,'C',1,2),(15,103,'C',1,2),(16,104,'C',1,2),(17,105,'C',1,2),(18,106,'C',1,2),(19,201,'A',1,2),(20,202,'A',1,2),(21,203,'A',1,2),(22,204,'A',1,2),(23,205,'A',1,2),(24,206,'A',1,2),(25,201,'B',1,2),(26,202,'B',1,2),(27,203,'B',1,2),(28,204,'B',1,2),(29,205,'B',1,2),(30,206,'B',1,2),(31,201,'C',1,2),(32,202,'C',1,2),(33,203,'C',1,2),(34,204,'C',1,2),(35,205,'C',1,2),(36,101,'A',2,2),(37,102,'A',2,2),(38,103,'A',2,2),(39,104,'A',2,2),(40,105,'A',2,2),(41,106,'A',2,2),(42,101,'B',2,2),(43,102,'B',2,2),(44,103,'B',2,2),(45,104,'B',2,2),(46,105,'B',2,2),(47,106,'B',2,2),(48,101,'C',2,2),(49,102,'C',2,2),(50,103,'C',2,2),(51,104,'C',2,2),(52,105,'C',2,2),(53,106,'C',2,2),(54,201,'A',2,2),(55,202,'A',2,2),(56,203,'A',2,2),(57,204,'A',2,2),(58,205,'A',2,2),(59,206,'A',2,2),(60,201,'B',2,2),(61,202,'B',2,2),(62,203,'B',2,2),(63,204,'B',2,2),(64,205,'B',2,2),(65,206,'B',2,2),(66,201,'C',2,2),(67,202,'C',2,2),(68,203,'C',2,2),(69,204,'C',2,2),(70,205,'C',2,2),(71,101,'A',3,2),(72,102,'A',3,2),(73,103,'A',3,2),(74,104,'A',3,2),(75,105,'A',3,2),(76,101,'B',3,2),(77,102,'B',3,2),(78,103,'B',3,2),(79,104,'B',3,2),(80,105,'B',3,2),(81,101,'C',3,2),(82,102,'C',3,2),(83,103,'C',3,2),(84,104,'C',3,2),(85,105,'C',3,2),(86,201,'A',3,2),(87,202,'A',3,2),(88,203,'A',3,2),(89,204,'A',3,2),(90,205,'A',3,2),(91,201,'B',3,2),(92,202,'B',3,2),(93,203,'B',3,2),(94,204,'B',3,2),(95,205,'B',3,2),(96,201,'C',3,2),(97,202,'C',3,2),(98,203,'C',3,2),(99,204,'C',3,2),(100,205,'C',3,2);
+/*!40000 ALTER TABLE `ROOM` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `STUDENT`
+--
+
+DROP TABLE IF EXISTS `STUDENT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `STUDENT` (
+  `USN` char(10) NOT NULL,
+  `Fname` varchar(15) NOT NULL,
+  `Lname` varchar(15) NOT NULL,
+  `Course` varchar(10) NOT NULL,
+  `Cgpa` decimal(4,2) DEFAULT NULL,
+  `Phone_no` char(10) DEFAULT NULL,
+  `Email_id` varchar(40) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `Gender` varchar(6) DEFAULT NULL,
+  PRIMARY KEY (`USN`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `STUDENT`
+--
+
+LOCK TABLES `STUDENT` WRITE;
+/*!40000 ALTER TABLE `STUDENT` DISABLE KEYS */;
+INSERT INTO `STUDENT` VALUES ('1RV12BT124','Addy','Petyanin','B.E.',9.66,'63434822','tmcgeouch3f@answers.com','Ap #918-1646 Interdum Avenue, Ambattur, Bulgaria, 160137','Male'),('1RV12CH055','Candis','Pawnsford','B.E.',8.16,'5051445322','kcrumley1i@cdc.gov','9393 Tempus, Av., Durham, Nepal, 9528','Female'),('1RV12CH101','Thorndike','Hovenden','B.E.',8.22,'845428535','jgwyllt2s@vkontakte.ru','Ap #506-9292 Lectus Road, Gembloux, Zambia, 8865','Male'),('1RV12CH108','Inglebert','MacKimm','B.E.',9.85,'8803294015','gwakely2z@java.com','534-6603 Tortor. Ave, Paglieta, Kazakhstan, 1400','Male'),('1RV12CH114','Aluin','Breheny','B.E.',8.13,'6092238020','rcrebbin35@addthis.com','265-2879 Eu Av., Wrexham, Sao Tome and Principe, 20635','Male'),('1RV12CH189','Manolo','Toby','B.E.',8.02,'7651018745','fschofield58@deviantart.com','4792 Integer Ave, Montrose, Ukraine, 71968','Male'),('1RV12CS012','Lauree','Dillway','B.E.',9.24,'6320040270','wbresnahanb@msn.com','Ap #352-3033 At Rd., Lo Espejo, Japan, 80974','Female'),('1RV12CS041','Ringo','Nicholl','B.E.',8.51,'4755354102','fmartinek14@eventbrite.com','3928 Nullam Street, Machilipatnam, Saint Lucia, 104693','Male'),('1RV12CS110','Eileen','Boyet','B.E.',8.72,'3320279785','egriffin31@ovh.net','2659 Ac Rd., Rupelmonde, Estonia, 4884','Female'),('1RV12EC047','Raine','Slater','B.E.',9.47,'5328128206','speirpoint1a@google.nl','8462 Lobortis, St., Guadalupe, Bangladesh, 78721','Female'),('1RV12EC183','Kurtis','McRobbie','B.E.',7.14,'7836855767','scrut52@npr.org','Ap #437-6862 Dolor Street, Tocopilla, Maldives, 83782','Male'),('1RV12EE043','Isak','Bowcock','M. Tech',7.93,'6346384171','ffinden16@dailymail.co.uk','2499 Sit Avenue, Derby, Lesotho, 20743','Male'),('1RV12EE060','Pammy','Venediktov','B.E.',8.40,'8601195008','eloudyan1n@biblegateway.com','Ap #985-9808 Lobortis. Road, Dibrugarh, United States Minor Outlying Islands, 3829','Female'),('1RV12EI066','Clim','Breach','M. Tech',9.02,'8367999134','adrinkale1t@dedecms.com','Ap #114-1558 Dolor Rd., Lauder, Norway, 437258','Male'),('1RV12EI086','Mathilda','Waycott','B.E.',8.10,'4946887601','ccoolahan2d@nyu.edu','P.O. Box 886, 902 Augue Rd., Dornoch, Gambia, 67712','Female'),('1RV12EI143','Erek','Ackerley','B.E.',7.56,'7521161521','ggreenan3y@google.cn','797-8375 Dui, St., Merthyr Tydfil, Reunion, 552633','Male'),('1RV12EI144','Agata','Kleeborn','B.E.',9.55,'4357557186','dkelberer3z@cpanel.net','184-3575 Proin Avenue, Ludhiana, Argentina, 7770','Female'),('1RV12EI157','Ursala','Rapps','B.E.',7.97,'4169686616','jhasluck4c@alexa.com','4449 Donec Ave, Schore, Ecuador, 939772','Female'),('1RV12IS021','Kenon','Abbison','M. Tech',9.60,'5190515796','dwinslettk@seattletimes.com','P.O. Box 538, 1863 Eget, St., High Wycombe, United States, 5159','Male'),('1RV12IS027','Rhys','Eyers','B.E.',7.22,'5220663054','aharmstoneq@engadget.com','Ap #569-4762 Amet Ave, Liverpool, Trinidad and Tobago, 44864','Male'),('1RV12IS034','Vite','Hirschmann','B.E.',8.66,'1666247901','vwitheringtonx@tinypic.com','987-2779 Vivamus Rd., Offenbach am Main, Jamaica, 917472','Male'),('1RV12IS052','Torie','Kender','M. Tech',9.98,'5056317888','mbrompton1f@edublogs.org','542-3272 Nulla Av., Kukatpalle, Central African Republic, 51091','Female'),('1RV12IS065','Korey','Pohls','B.E.',9.79,'2713231043','dmaclachlan1s@yolasite.com','P.O. Box 886, 902 Augue Rd., Dornoch, Gambia, 67712','Male'),('1RV12IS092','Perla','Harce','B.E.',8.45,'1943834245','scantero2j@home.pl','Ap #506-9292 Lectus Road, Gembloux, Zambia, 8865','Female'),('1RV12IS103','Gregg','Spreckley','B.E.',9.76,'1087237912','cevetts2u@reddit.com','9429 Fusce Av., Compiano, Morocco, 748499','Male'),('1RV12ME116','Kristofor','Jewess','B.E.',7.78,'8833623734','gmullinger37@howstuffworks.com','P.O. Box 283, 3985 Eu Avenue, Saint-Nazaire, Norfolk Island, 41894','Male'),('1RV12TE011','Ange','Cottam','B.E.',9.89,'1517790050','jconnicka@stumbleupon.com','1665 Mattis Street, Cavaion Veronese, Bonaire, Sint Eustatius and Saba, 662091','Male'),('1RV12TE037','Myriam','Woloschin','B.E.',9.56,'2823819193','bnote10@fotki.com','P.O. Box 464, 675 Sed St., Clearwater Municipal District, Cameroon, 305557','Female'),('1RV12TE113','Redford','Bygrove','B.E.',9.14,'8612798833','wburndred34@pinterest.com','3928 Nullam Street, Machilipatnam, Saint Lucia, 104693','Male'),('1RV12TE137','Ring','Corington','B.E.',8.10,'7222654836','gcadden3s@spotify.com','184-3575 Proin Avenue, Ludhiana, Argentina, 7770','Male'),('1RV13AS176','Jedediah','Garrique','B.E.',8.96,'4530296660','cattaway4v@wordpress.com','Ap #624-696 Ac, Street, Adana, Mexico, 8628','Male'),('1RV13BT079','Kamila','Tussaine','B.E.',8.71,'3501999763','lgoodbourn26@eepurl.com','Ap #798-5501 Aliquet St., Godhra, Reunion, 7462','Female'),('1RV13CH005','Loise','Arnhold','B.E.',8.15,'7480791097','ahussell4@wordpress.com','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands, 78658','Female'),('1RV13CH014','Toma','Checci','B.E.',9.26,'9827954490','educkettd@360.cn','2934 Dolor Rd., PÃ¼ttlingen, Korea, South, 86737','Female'),('1RV13CH105','Maribeth','Hubane','B.E.',7.42,'6826373882','mbenns2w@usa.gov','P.O. Box 984, 7493 Sed Road, Recife, Cayman Islands, 869871','Female'),('1RV13CH163','Sibilla','Jedrysik','B.E.',9.71,'8281935588','dreddle4i@uol.com.br','Ap #122-7016 Mauris Ave, Arles, Sint Maarten, 7162','Female'),('1RV13CH197','Alano','Philbin','B.E.',7.94,'9396869945','jduddin5g@artisteer.com','Ap #329-4563 Eget Road, Burntisland, Montenegro, 304313','Male'),('1RV13CS036','Ikey','Johnston','M. Tech',9.67,'580785475','ftonnz@networksolutions.com','534-6603 Tortor. Ave, Paglieta, Kazakhstan, 1400','Male'),('1RV13CS088','Ferd','Pannett','B.E.',8.86,'2749431239','adelany2f@51.la','P.O. Box 554, 7045 Aenean St., St. Catharines, Seychelles, 514573','Male'),('1RV13CS171','Darryl','Ingamells','B.E.',8.36,'9528580939','owallentin4q@ebay.com','Ap #569-4762 Amet Ave, Liverpool, Trinidad and Tobago, 44864','Female'),('1RV13CV002','Sterling','Cattlemull','B.E.',7.53,'8064142709','keltun1@ucoz.com','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic, 605109','Male'),('1RV13CV109','Caesar','Longfoot','B.E.',7.88,'6957970892','mlaven30@gmpg.org','P.O. Box 464, 675 Sed St., Clearwater Municipal District, Cameroon, 305557','Male'),('1RV13CV154','Malory','Getcliffe','B.E.',7.40,'5931132309','aklimkowski49@dyndns.org','7251 Est, Road, Rhisnes, Mexico, 63790','Female'),('1RV13CV191','Dallis','Novotne','B.E.',9.88,'6293804104','hlemanu5a@nps.gov','8462 Lobortis, St., Guadalupe, Bangladesh, 78721','Male'),('1RV13EC010','Bebe','Trousdell','B.E.',7.27,'1418643343','lstainer9@ezinearticles.com','7251 Est, Road, Rhisnes, Mexico, 63790','Female'),('1RV13EC106','Hester','Klagges','B.E.',7.75,'6116913792','ewakelam2x@joomla.org','987-2779 Vivamus Rd., Offenbach am Main, Jamaica, 917472','Female'),('1RV13EC152','Grissel','Van der Hoeven','B.E.',8.67,'6423995249','fsiney47@posterous.com','Ap #367-7237 Sem. Av., Biez, Taiwan, 26562','Female'),('1RV13EE004','Wyndham','Normadell','B.E.',8.17,'1353055957','jbeeze3@live.com','199-3738 Tincidunt Rd., Lleida, Netherlands, 8325','Male'),('1RV13EE008','Sebastiano','Hayden','B.E.',9.18,'7308118347','fblatherwick7@oaic.gov.au','Ap #367-7237 Sem. Av., Biez, Taiwan, 26562','Male'),('1RV13EE138','Rad','Shorbrook','B.E.',7.06,'5216991611','astaries3t@ucoz.ru','9429 Fusce Av., Compiano, Morocco, 748499','Male'),('1RV13EI042','Lancelot','Ibbison','B.E.',9.33,'9795888358','estansfield15@who.int','265-2879 Eu Av., Wrexham, Sao Tome and Principe, 20635','Male'),('1RV13EI159','Kory','Sidaway','B.E.',8.76,'7008040695','tgarred4e@bandcamp.com','181 Ornare Street, Proddatur, Madagascar, 5713','Male'),('1RV13IS045','Loraine','Pogue','B.E.',7.21,'923532552','cculbard18@telegraph.co.uk','4792 Integer Ave, Montrose, Ukraine, 71968','Female'),('1RV13IS046','Cosimo','Wisbey','B.E.',7.31,'5651458492','rparkey19@aboutads.info','P.O. Box 335, 546 Amet, Av., Bhubaneswar, Algeria, 51605','Male'),('1RV13IS074','Farand','Lipson','B.E.',7.10,'2110123524','ecapini21@friendfeed.com','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic, 605109','Female'),('1RV13IS140','Thaddeus','Perigo','B.E.',8.15,'3303834911','klester3v@springer.com','Ap #918-1646 Interdum Avenue, Ambattur, Bulgaria, 160137','Male'),('1RV13IS150','Rosabel','Loxton','B.E.',8.76,'1932676139','jdaw45@patch.com','P.O. Box 844, 2291 Arcu Ave, Lawton, Hungary, 33250','Female'),('1RV13IS168','Redford','Kilsby','B.E.',8.12,'5887030984','mdewett4n@tinyurl.com','772-4596 Odio Road, Ashoknagar-Kalyangarh, Guam, 96276','Male'),('1RV13IS175','Averil','Heinreich','B.E.',7.66,'4472885557','mhoggan4u@bravesites.com','6893 Amet Rd., Fossato di Vico, Singapore, 31319','Male'),('1RV13IS187','Nikki','Minney','B.E.',9.82,'5003019769','narmin56@amazon.co.uk','2499 Sit Avenue, Derby, Lesotho, 20743','Female'),('1RV13ME016','Breanne','Percy','B.E.',8.76,'6381957816','kbreitf@dmoz.org','920-2587 Rutrum St., Montleban, Saint Martin, 2144','Female'),('1RV13ME096','Marcelle','Sabate','B.E.',9.05,'9611598432','rblomfield2n@mediafire.com','Ap #114-1558 Dolor Rd., Lauder, Norway, 437258','Female'),('1RV13ME111','Dinnie','Vittet','B.E.',9.51,'4320587227','tdumphries32@eventbrite.com','Ap #437-6862 Dolor Street, Tocopilla, Maldives, 83782','Female'),('1RV13ME174','Louise','Bucklee','B.E.',7.71,'8527987074','abartosch4t@hatena.ne.jp','900-1676 In Av., Lang, Madagascar, 5911','Female'),('1RV13ME179','Clayborne','Snibson','B.E.',7.29,'4088788664','mmeltetal4y@elegantthemes.com','7116 Et, St., Dehri, Saint BarthÃ©lemy, 69505','Male'),('1RV13ME192','Odie','Wellings','B.E.',9.03,'5489082984','sschukert5b@scribd.com','P.O. Box 708, 3291 Lorem Avenue, North Bay, Solomon Islands, 7907','Male'),('1RV13TE025','De witt','Wiltsher','B.E.',7.18,'539737356','dscollio@senate.gov','612-2254 Imperdiet St., Campomarino, Heard Island and Mcdonald Islands, 55790','Male'),('1RV13TE118','Jemimah','Tolcharde','B.E.',9.82,'6797205808','ckeitley39@nsw.gov.au','P.O. Box 335, 546 Amet, Av., Bhubaneswar, Algeria, 51605','Female'),('1RV13TE135','Minetta','Halse','B.E.',8.13,'1001746600','feggins3q@xing.com','6018 Porta Street, Cagli, Liberia, 51510','Female'),('1RV13TE142','Arlan','Penny','B.E.',9.52,'1953695175','mfeltham3x@microsoft.com','855-3190 Ligula St., Ostra Vetere, Spain, 63999','Male'),('1RV13TE153','Pearce','Houndson','B.E.',9.85,'9696382707','vbinyon48@rediff.com','2403 Sit St., Nacimiento, Bangladesh, 7811','Male'),('1RV13TE181','Aleen','Cheltnam','B.E.',8.84,'593913396','khadlington50@tripod.com','P.O. Box 464, 675 Sed St., Clearwater Municipal District, Cameroon, 305557','Female'),('1RV13TE186','Antonio','Oldacre','B.E.',9.16,'7287653990','rpinxton55@apple.com','265-2879 Eu Av., Wrexham, Sao Tome and Principe, 20635','Male'),('1RV13TE193','Karna','Jezzard','B.E.',9.58,'773603166','cgittings5c@drupal.org','Ap #347-7054 Taciti St., Brampton, Djibouti, 64627','Female'),('1RV14AS007','Kettie','Hallowell','B.E.',7.17,'4978244382','tskey6@wix.com','Ap #565-9769 Erat St., Lafayette, Portugal, 5913','Female'),('1RV14AS090','Carin','Toomer','B.E.',9.84,'4475239206','amangion2h@dailymotion.com','4621 Odio. St., Zuccarello, Sint Maarten, 9101','Female'),('1RV14AS122','Efren','Townsley','B.E.',7.53,'7304976896','esweetenham3d@chronoengine.com','9429 Fusce Av., Compiano, Morocco, 748499','Male'),('1RV14AS173','Edith','Pedlow','B.E.',7.63,'8950269899','rmartinet4s@wordpress.com','4523 Nec St., Enterprise, Syria, 451305','Female'),('1RV14AS177','Jenifer','Luff','B.E.',9.76,'9854227901','cparcall4w@so-net.ne.jp','P.O. Box 984, 7493 Sed Road, Recife, Cayman Islands, 869871','Female'),('1RV14BT001','Serene','Baynon','B.E.',7.99,'2997555973','kceschelli0@vkontakte.ru','Ap #537-8409 Sed St., Merzig, Micronesia, 59552','Female'),('1RV14BT073','Dru','Smieton','B.E.',7.28,'9707360143','dgiuron20@imageshack.us','Ap #537-8409 Sed St., Merzig, Micronesia, 59552','Female'),('1RV14CH195','Yale','Langstrath','B.E.',9.12,'7828856733','zfarny5e@yellowpages.com','Ap #600-6636 Nullam Road, Ahmadnagar, El Salvador, 80596','Male'),('1RV14CS068','Clo','Balfour','B.E.',7.68,'733247717','ghamflett1v@squarespace.com','P.O. Box 987, 2865 Aptent Street, Freux, Marshall Islands, 15761','Female'),('1RV14EC026','Tammi','D Alessandro','B.E.',7.49,'6201299351','elarhamp@cam.ac.uk','P.O. Box 244, 4709 Magnis Rd., Nashville, Moldova, 78160','Female'),('1RV14EC030','Kip','Perch','B.E.',8.79,'5282774518','mmerckt@bravesites.com','900-1676 In Av., Lang, Madagascar, 5911','Female'),('1RV14EE003','Neill','Rummings','B.E.',9.35,'565341146','hkleisle2@miibeian.gov.cn','3463 Risus Rd., Etobicoke, Western Sahara, 2495','Male'),('1RV14EE064','Rancell','Gommery','B.E.',8.37,'9134555846','kstranks1r@biglobe.ne.jp','Ap #868-8429 Velit. Rd., Columbia, Isle of Man, 15932','Male'),('1RV14EE127','Elberta','Marchello','B.E.',7.63,'3233077815','cwyburn3i@i2i.jp','797-8375 Dui, St., Merthyr Tydfil, Reunion, 552633','Female'),('1RV14EI083','Sibeal','Munro','B.E.',7.11,'2654428273','cgarron2a@home.pl','797-8375 Dui, St., Merthyr Tydfil, Reunion, 552633','Female'),('1RV14EI145','Adolpho','Chestnutt','B.E.',8.92,'1374444138','akyttor40@cbslocal.com','Ap #537-8409 Sed St., Merzig, Micronesia, 59552','Male'),('1RV14IS072','Sarge','Canet','B.E.',9.27,'9004251146','sfleetham1z@vinaora.com','184-3575 Proin Avenue, Ludhiana, Argentina, 7770','Male'),('1RV14IS198','Batholomew','Camble','B.E.',9.75,'3259965564','fcarwithen5h@icq.com','1688 Curae; St., Grand-Manil, Panama, 7184','Male'),('1RV14ME078','Lucas','Mathelin','B.E.',7.13,'7103288550','bstollberg25@cargocollective.com','9429 Fusce Av., Compiano, Morocco, 748499','Male'),('1RV14ME117','Oliviero','Terzza','B.E.',9.12,'3609296747','tpepperrall38@ow.ly','4792 Integer Ave, Montrose, Ukraine, 71968','Male'),('1RV14TE044','Cacilie','Reck','B.E.',9.88,'3065938251','omallock17@ed.gov','P.O. Box 283, 3985 Eu Avenue, Saint-Nazaire, Norfolk Island, 41894','Female'),('1RV14TE050','Catlee','Crutch','B.E.',8.67,'2999429398','bmartyntsev1d@reuters.com','583-2869 Ornare, Rd., Maple Ridge, Congo, the Democratic Republic of the, 51402','Female'),('1RV14TE067','Deedee','Simpson','B.E.',9.96,'7446190418','ipinckney1u@free.fr','P.O. Box 554, 7045 Aenean St., St. Catharines, Seychelles, 514573','Female'),('1RV14TE097','Annnora','Astlatt','B.E.',9.47,'6464570501','oridewood2o@diigo.com','P.O. Box 554, 7045 Aenean St., St. Catharines, Seychelles, 514573','Female'),('1RV14TE166','Abelard','Viger','B.E.',9.03,'7857161403','awadworth4l@washington.edu','P.O. Box 375, 3945 Nam Street, Meugliano, Djibouti, 6671','Male'),('1RV14TE196','Moishe','Borsi','B.E.',8.91,'4179857243','njoscelyne5f@tumblr.com','542-3272 Nulla Av., Kukatpalle, Central African Republic, 51091','Male'),('1RV15AS102','Filide','Connew','B.E.',8.55,'9576639042','stalkington2t@theguardian.com','184-3575 Proin Avenue, Ludhiana, Argentina, 7770','Female'),('1RV15BT069','Woodie','Bardnam','B.E.',8.94,'7226177412','mnisbith1w@boston.com','4621 Odio. St., Zuccarello, Sint Maarten, 9101','Male'),('1RV15BT071','Dar','Hattersley','B.E.',8.81,'1902964977','estaner1y@acquirethisname.com','Ap #506-9292 Lectus Road, Gembloux, Zambia, 8865','Male'),('1RV15BT076','Marrissa','Frangello','B.E.',9.41,'9362617013','kbassick23@mit.edu','199-3738 Tincidunt Rd., Lleida, Netherlands, 8325','Female'),('1RV15BT121','Beilul','Dinse','B.E.',9.04,'6305394288','eolliff3c@ow.ly','Ap #347-7054 Taciti St., Brampton, Djibouti, 64627','Female'),('1RV15BT182','Davine','Carpe','B.E.',7.90,'8807786621','ashevlane51@example.com','2659 Ac Rd., Rupelmonde, Estonia, 4884','Female'),('1RV15CH048','Justin','Picker','B.E.',7.72,'9083986500','vshopcott1b@umn.edu','P.O. Box 708, 3291 Lorem Avenue, North Bay, Solomon Islands, 7907','Male'),('1RV15CH087','Lillian','Ervine','B.E.',9.41,'7661557916','cewin2e@godaddy.com','Ap #114-1558 Dolor Rd., Lauder, Norway, 437258','Female'),('1RV15CH095','Caritta','Royste','B.E.',7.94,'3915088935','aoldam2m@skype.com','P.O. Box 886, 902 Augue Rd., Dornoch, Gambia, 67712','Female'),('1RV15CH126','Deeyn','Dinnington','B.E.',8.33,'5728693199','bphilcox3h@sbwire.com','855-3190 Ligula St., Ostra Vetere, Spain, 63999','Female'),('1RV15CS009','Pearl','Buckeridge','M. Tech',9.99,'7572132251','cadamowitz8@delicious.com','2403 Sit St., Nacimiento, Bangladesh, 7811','Female'),('1RV15CS139','Brendan','Folker','B.E.',9.53,'20862539','gedens3u@dion.ne.jp','Ap #798-5501 Aliquet St., Godhra, Reunion, 7462','Male'),('1RV15CS149','Yard','Scotchbourouge','B.E.',7.29,'295463066','akeson44@hao123.com','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands, 78658','Male'),('1RV15CS180','Randi','Yurchishin','B.E.',8.46,'1059063921','mbattams4z@sun.com','534-6603 Tortor. Ave, Paglieta, Kazakhstan, 1400','Male'),('1RV15CV035','Tammie','Orvis','B.E.',9.66,'9875504386','rlevicky@tinypic.com','7116 Et, St., Dehri, Saint BarthÃ©lemy, 69505','Male'),('1RV15CV093','Harold','Wyldbore','B.E.',9.90,'7755394352','oputton2k@ocn.ne.jp','184-3575 Proin Avenue, Ludhiana, Argentina, 7770','Male'),('1RV15CV133','Millicent','Kardos-Stowe','B.E.',8.56,'9188294234','lgullyes3o@elpais.com','P.O. Box 987, 2865 Aptent Street, Freux, Marshall Islands, 15761','Female'),('1RV15CV146','Ingaberg','Thairs','B.E.',7.61,'2100267841','kcompford41@amazon.co.jp','P.O. Box 379, 1421 Molestie St., Tonk, Czech Republic, 605109','Female'),('1RV15CV200','Meier','Neaves','B.E.',9.68,'4228240119','watherton5j@cdbaby.com','P.O. Box 462, 1817 Aliquet Road, Grey County, Austria, 7407','Male'),('1RV15EI057','Antons','Reding','B.E.',9.81,'1804423459','aarrighi1k@biblegateway.com','9429 Fusce Av., Compiano, Morocco, 748499','Male'),('1RV15EI130','Adella','O Nion','B.E.',9.74,'3708204166','coughtright3l@themeforest.net','P.O. Box 886, 902 Augue Rd., Dornoch, Gambia, 67712','Female'),('1RV15EI199','Sharleen','Quilleash','B.E.',8.26,'6500950836','vdeferraris5i@nhs.uk','9393 Tempus, Av., Durham, Nepal, 9528','Female'),('1RV15IS070','Lucian','Seer','B.E.',8.31,'3794860977','btender1x@google.com.br','6018 Porta Street, Cagli, Liberia, 51510','Male'),('1RV15IS081','Keane','Diboll','B.E.',8.79,'2458456596','tmckiddin28@goodreads.com','Ap #985-9808 Lobortis. Road, Dibrugarh, United States Minor Outlying Islands, 3829','Male'),('1RV15IS158','Annnora','Driuzzi','B.E.',9.42,'6214728116','modrought4d@google.com','2934 Dolor Rd., PÃ¼ttlingen, Korea, South, 86737','Female'),('1RV15ME075','Justino','Neiland','B.E.',7.97,'1787507823','rdarracott22@engadget.com','3463 Risus Rd., Etobicoke, Western Sahara, 2495','Male'),('1RV15ME141','Kermie','Massimi','B.E.',7.03,'2319568522','kmariel3w@geocities.com','Ap #985-9808 Lobortis. Road, Dibrugarh, United States Minor Outlying Islands, 3829','Male'),('1RV15TE033','Reece','Golley','B.E.',7.63,'2870487150','pdigweedw@so-net.ne.jp','P.O. Box 984, 7493 Sed Road, Recife, Cayman Islands, 869871','Male'),('1RV15TE172','Colline','Gever','B.E.',7.90,'9959885429','lleyban4r@spotify.com','P.O. Box 480, 9817 Eleifend, St., Castiglione di Sicilia, Bouvet Island, 344801','Female'),('1RV16AS006','Leeanne','McAdam','B.E.',8.52,'3770053141','fdeblase5@blogs.com','P.O. Box 844, 2291 Arcu Ave, Lawton, Hungary, 33250','Female'),('1RV16AS020','Helen','Limbourne','B.E.',9.69,'6638691392','afrazerj@elpais.com','Ap #833-3470 Lectus Rd., Cinco Esquinas, Gabon, 527','Female'),('1RV16AS053','Terese','Joder','B.E.',7.62,'7867144226','allywarch1g@ifeng.com','Ap #329-4563 Eget Road, Burntisland, Montenegro, 304313','Female'),('1RV16AS155','Courtnay','Pedreschi','B.E.',9.33,'2376390060','jquarlis4a@ted.com','1665 Mattis Street, Cavaion Veronese, Bonaire, Sint Eustatius and Saba, 662091','Male'),('1RV16BT156','Prinz','Tottman','B.E.',7.11,'9381760586','geastwell4b@wordpress.org','Ap #352-3033 At Rd., Lo Espejo, Japan, 80974','Male'),('1RV16CH084','Bobby','Coldbathe','B.E.',7.96,'8222526154','jsamarth2b@topsy.com','688-6589 Morbi Street, Ruette, Honduras, 17124','Female'),('1RV16CS164','Thalia','O Duilleain','B.E.',8.98,'6817555787','drosengart4j@eepurl.com','Ap #833-3470 Lectus Rd., Cinco Esquinas, Gabon, 527','Female'),('1RV16EC099','Annemarie','Weaben','B.E.',8.93,'4182979028','pmcdiarmid2q@geocities.jp','4621 Odio. St., Zuccarello, Sint Maarten, 9101','Female'),('1RV16EI029','Martica','Hyndman','B.E.',7.70,'7301136765','vcorkells@people.com.cn','4523 Nec St., Enterprise, Syria, 451305','Female'),('1RV16EI129','Massimiliano','Ofer','B.E.',7.96,'676560164','cgoldstraw3k@free.fr','Ap #868-8429 Velit. Rd., Columbia, Isle of Man, 15932','Male'),('1RV16EI131','Trevar','Brosini','B.E.',7.20,'3386642179','anyssen3m@ebay.com','Ap #114-1558 Dolor Rd., Lauder, Norway, 437258','Male'),('1RV16EI136','Jacob','Ellwand','B.E.',9.82,'2843426413','rmacallan3r@mashable.com','Ap #506-9292 Lectus Road, Gembloux, Zambia, 8865','Male'),('1RV16IS098','Jonie','Clowsley','B.E.',8.80,'4134959233','tanderson2p@disqus.com','P.O. Box 987, 2865 Aptent Street, Freux, Marshall Islands, 15761','Female'),('1RV16ME085','Stephie','Ackery','B.E.',9.87,'5685765819','kcowup2c@gmpg.org','Ap #868-8429 Velit. Rd., Columbia, Isle of Man, 15932','Female'),('1RV16TE018','Farrel','Phillott','B.E.',9.09,'2977217363','rtregiddoh@hostgator.com','5398 Sollicitudin St., Balen, Bahamas, 21307','Male'),('1RV16TE059','Elwyn','Vedishchev','B.E.',9.48,'2922055019','bkulicke1m@about.me','Ap #918-1646 Interdum Avenue, Ambattur, Bulgaria, 160137','Male'),('1RV16TE185','Liana','Pluvier','B.E.',8.27,'1028908660','mgoody54@sourceforge.net','3928 Nullam Street, Machilipatnam, Saint Lucia, 104693','Female'),('1RV17AS019','Jethro','Liepins','B.E.',8.52,'2659529876','asantoi@nbcnews.com','Ap #122-7016 Mauris Ave, Arles, Sint Maarten, 7162','Male'),('1RV17AS119','Antonius','Cicci','B.E.',9.97,'4022991844','kanthoney3a@skyrock.com','8462 Lobortis, St., Guadalupe, Bangladesh, 78721','Male'),('1RV17AS167','Mariquilla','Ithell','B.E.',7.75,'8902132013','dpavlovsky4m@cbsnews.com','957-7329 Eu Rd., Chiniot, Sao Tome and Principe, 4772','Female'),('1RV17AS169','Karoline','Alty','B.E.',9.45,'1979339058','tsurgenor4o@uol.com.br','612-2254 Imperdiet St., Campomarino, Heard Island and Mcdonald Islands, 55790','Female'),('1RV17BT063','Golda','Warriner','B.E.',7.14,'9914263054','dlackmann1q@jalbum.net','688-6589 Morbi Street, Ruette, Honduras, 17124','Female'),('1RV17BT132','Morie','Forrest','B.E.',7.03,'7330911445','deyton3n@ebay.co.uk','P.O. Box 554, 7045 Aenean St., St. Catharines, Seychelles, 514573','Male'),('1RV17BT160','Desmond','Arnholtz','B.E.',9.29,'3195563290','rjeeves4f@redcross.org','920-2587 Rutrum St., Montleban, Saint Martin, 2144','Male'),('1RV17CH031','Annmarie','Burthom','B.E.',7.29,'7269466335','tleseru@dailymail.co.uk','6893 Amet Rd., Fossato di Vico, Singapore, 31319','Female'),('1RV17CH032','Uri','Beasant','B.E.',9.90,'6672996273','smcterlaghv@dot.gov','Ap #624-696 Ac, Street, Adana, Mexico, 8628','Male'),('1RV17CS015','Eveline','Sandwith','B.E.',7.58,'5382631670','hconverye@joomla.org','181 Ornare Street, Proddatur, Madagascar, 5713','Female'),('1RV17CS024','Viva','Matthewes','M. Tech',8.65,'6734645282','mbyngn@sohu.com','772-4596 Odio Road, Ashoknagar-Kalyangarh, Guam, 96276','Female'),('1RV17CV054','Dolf','Sallarie','B.E.',8.35,'6806784143','emayes1h@elpais.com','1688 Curae; St., Grand-Manil, Panama, 7184','Male'),('1RV17EC023','Donovan','Henri','B.E.',7.33,'3815868513','ebachellierm@barnesandnoble.com','957-7329 Eu Rd., Chiniot, Sao Tome and Principe, 4772','Male'),('1RV17EC147','Martita','Scholtz','B.E.',7.04,'7983112890','mbreissan42@live.com','3463 Risus Rd., Etobicoke, Western Sahara, 2495','Female'),('1RV17EE120','Jdavie','Filyukov','B.E.',7.81,'570642310','wreddihough3b@opensource.org','P.O. Box 708, 3291 Lorem Avenue, North Bay, Solomon Islands, 7907','Male'),('1RV17EE125','Chuck','Agirre','B.E.',7.50,'5511359351','fdullingham3g@purevolume.com','Ap #985-9808 Lobortis. Road, Dibrugarh, United States Minor Outlying Islands, 3829','Male'),('1RV17EE170','Josias','Halworth','B.E.',9.27,'6056172635','gdifrancecshi4p@123-reg.co.uk','P.O. Box 244, 4709 Magnis Rd., Nashville, Moldova, 78160','Male'),('1RV17EI061','Brit','Rosenwasser','B.E.',7.58,'2661938087','cdcosta1o@jalbum.net','855-3190 Ligula St., Ostra Vetere, Spain, 63999','Female'),('1RV17EI123','Jeanne','Cox','B.E.',7.39,'4896052676','afroggatt3e@fema.gov','Ap #798-5501 Aliquet St., Godhra, Reunion, 7462','Female'),('1RV17IS039','Ragnar','Knoton','B.E.',7.82,'9704499728','dbalding12@wiley.com','Ap #437-6862 Dolor Street, Tocopilla, Maldives, 83782','Male'),('1RV17IS128','Boony','Wince','B.E.',9.61,'2203387912','strehearn3j@mashable.com','688-6589 Morbi Street, Ruette, Honduras, 17124','Male'),('1RV17ME190','Gino','Betton','B.E.',8.57,'1744037051','agibbetts59@cbc.ca','P.O. Box 335, 546 Amet, Av., Bhubaneswar, Algeria, 51605','Male'),('1RV17TE051','Patric','Danbrook','B.E.',8.37,'7305329754','hnaisbitt1e@weebly.com','Ap #600-6636 Nullam Road, Ahmadnagar, El Salvador, 80596','Male'),('1RV17TE115','Adamo','Puddicombe','B.E.',9.05,'9686277919','efookes36@pcworld.com','2499 Sit Avenue, Derby, Lesotho, 20743','Male'),('1RV18AS040','Wes','Pietasch','B.E.',8.27,'4776252007','ypires13@trellian.com','Ap #544-9431 Vel, Street, Montigny-lÃ¨s-Metz, Saint Kitts and Nevis, 4191','Male'),('1RV18AS107','Janot','McCurtin','B.E.',8.81,'9726757169','ssteggles2y@mozilla.com','7116 Et, St., Dehri, Saint BarthÃ©lemy, 69505','Female'),('1RV18AS188','Adah','Snowling','B.E.',9.92,'5266201266','akeuning57@un.org','P.O. Box 283, 3985 Eu Avenue, Saint-Nazaire, Norfolk Island, 41894','Female'),('1RV18BT058','Shem','Josefs','B.E.',8.71,'6542235493','mbroker1l@bbb.org','Ap #798-5501 Aliquet St., Godhra, Reunion, 7462','Male'),('1RV18BT077','Ryon','Screase','B.E.',8.59,'3684012068','ivigours24@theguardian.com','618-2697 Nam Street, San Felipe, South Georgia and The South Sandwich Islands, 78658','Male'),('1RV18BT080','Catina','Notman','B.E.',9.43,'7626206118','aburkwood27@tuttocitta.it','Ap #918-1646 Interdum Avenue, Ambattur, Bulgaria, 160137','Female'),('1RV18CH091','Jose','Klees','B.E.',8.53,'2988407916','dpoznan2i@github.com','6018 Porta Street, Cagli, Liberia, 51510','Male'),('1RV18CH184','Archer','Braben','B.E.',7.52,'7847734907','mdavitt53@buzzfeed.com','Ap #544-9431 Vel, Street, Montigny-lÃ¨s-Metz, Saint Kitts and Nevis, 4191','Male'),('1RV18CS094','Kalina','Tasker','B.E.',9.04,'9511041959','cpallatina2l@reddit.com','Ap #868-8429 Velit. Rd., Columbia, Isle of Man, 15932','Female'),('1RV18CS165','Tedd','Hold','B.E.',9.81,'8690655913','ngreenman4k@sogou.com','P.O. Box 538, 1863 Eget, St., High Wycombe, United States, 5159','Male'),('1RV18CV100','Alberta','Pilgrim','B.E.',9.44,'3033088759','gnand2r@senate.gov','6018 Porta Street, Cagli, Liberia, 51510','Female'),('1RV18CV104','Boniface','Skarman','B.E.',8.53,'8371572921','hoxherd2v@unicef.org','Ap #798-5501 Aliquet St., Godhra, Reunion, 7462','Male'),('1RV18CV194','Margot','Readett','B.E.',8.89,'7950127686','rskentelbury5d@sphinn.com','583-2869 Ornare, Rd., Maple Ridge, Congo, the Democratic Republic of the, 51402','Female'),('1RV18EC038','Quinta','Elie','B.E.',8.57,'1739764242','jbrandon11@ox.ac.uk','2659 Ac Rd., Rupelmonde, Estonia, 4884','Female'),('1RV18EC089','Ezmeralda','McCutheon','B.E.',7.87,'1715470869','mjakubczyk2g@stanford.edu','P.O. Box 987, 2865 Aptent Street, Freux, Marshall Islands, 15761','Female'),('1RV18EC148','Wilfrid','Wackley','B.E.',8.54,'6361175189','whackworthy43@unblog.fr','199-3738 Tincidunt Rd., Lleida, Netherlands, 8325','Male'),('1RV18EE049','Jdavie','Haskew','B.E.',9.97,'1677404035','erudderham1c@vkontakte.ru','Ap #347-7054 Taciti St., Brampton, Djibouti, 64627','Male'),('1RV18EE134','Otho','Safont','B.E.',7.42,'649414934','lewing3p@lycos.com','4621 Odio. St., Zuccarello, Sint Maarten, 9101','Male'),('1RV18EE151','Mozes','Jeacock','B.E.',8.56,'2007794454','alicciardiello46@usa.gov','Ap #565-9769 Erat St., Lafayette, Portugal, 5913','Male'),('1RV18EE178','Dagmar','Smerdon','B.E.',9.95,'6857549052','epagen4x@wp.com','987-2779 Vivamus Rd., Offenbach am Main, Jamaica, 917472','Female'),('1RV18EI028','Spencer','Ringwood','B.E.',9.00,'9968316237','splumleyr@macromedia.com','P.O. Box 480, 9817 Eleifend, St., Castiglione di Sicilia, Bouvet Island, 344801','Male'),('1RV18EI056','Kassey','Slatter','B.E.',9.46,'5421177645','bdainty1j@berkeley.edu','P.O. Box 462, 1817 Aliquet Road, Grey County, Austria, 7407','Female'),('1RV18EI162','Darbie','Gerasch','B.E.',8.15,'5785335859','msanday4h@so-net.ne.jp','5398 Sollicitudin St., Balen, Bahamas, 21307','Female'),('1RV18IS082','Patrica','Van der Merwe','B.E.',7.71,'2341627625','mdady29@psu.edu','855-3190 Ligula St., Ostra Vetere, Spain, 63999','Female'),('1RV18ME013','Kirstyn','Rosengren','M. Tech',7.56,'3163454682','uconsterdinec@biglobe.ne.jp','4449 Donec Ave, Schore, Ecuador, 939772','Female'),('1RV18ME022','Pepe','Cheshire','B.E.',8.43,'1507044232','galflattl@woothemes.com','P.O. Box 375, 3945 Nam Street, Meugliano, Djibouti, 6671','Male'),('1RV18ME062','Jard','McVie','B.E.',9.03,'7954414736','jlockton1p@weather.com','797-8375 Dui, St., Merthyr Tydfil, Reunion, 552633','Male'),('1RV18ME112','Siana','Corain','B.E.',7.76,'8843378333','ohullah33@bbb.org','Ap #544-9431 Vel, Street, Montigny-lÃ¨s-Metz, Saint Kitts and Nevis, 4191','Female'),('1RV18ME161','Lydie','Quinnet','B.E.',8.85,'7308617351','kblaine4g@pbs.org','Ap #647-9379 In Av., St. Albans, Namibia, 218605','Female'),('1RV18TE017','Martyn','Shoemark','B.E.',7.33,'8543371988','ekovelmanng@csmonitor.com','Ap #647-9379 In Av., St. Albans, Namibia, 218605','Male');
+/*!40000 ALTER TABLE `STUDENT` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `SUPERVISOR`
+--
+
+DROP TABLE IF EXISTS `SUPERVISOR`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `SUPERVISOR` (
+  `Hostel_id` int(11) NOT NULL,
+  `Emp_id` char(7) NOT NULL,
+  `Type` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`Hostel_id`,`Emp_id`),
+  KEY `supadmfk` (`Emp_id`),
+  CONSTRAINT `supadmfk` FOREIGN KEY (`Emp_id`) REFERENCES `ADMIN` (`Emp_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `suphosfk` FOREIGN KEY (`Hostel_id`) REFERENCES `HOSTEL` (`Hostel_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `SUPERVISOR`
+--
+
+LOCK TABLES `SUPERVISOR` WRITE;
+/*!40000 ALTER TABLE `SUPERVISOR` DISABLE KEYS */;
+INSERT INTO `SUPERVISOR` VALUES (1,'06N0015','Management Chief'),(1,'08N0014','Mess Wadern'),(1,'13N0009','Mess Wadern'),(1,'14N0001','Chief Wardern'),(1,'17N0003','Resident Wadern'),(2,'04N0012','Resident Wadern'),(2,'14N0001','Chief Wardern'),(2,'17N0003','Management Chief'),(3,'13N0004','Resident Wadern'),(3,'13N0008','Ragging Head'),(3,'14N0001','Chief Wardern'),(3,'17N0003','Management Chief');
+/*!40000 ALTER TABLE `SUPERVISOR` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `TEACHER`
+--
+
+DROP TABLE IF EXISTS `TEACHER`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `TEACHER` (
+  `T_id` char(7) NOT NULL,
+  `Fname` varchar(10) DEFAULT NULL,
+  `Lname` varchar(10) DEFAULT NULL,
+  `Mob_no` char(10) DEFAULT NULL,
+  `Email_id` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`T_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TEACHER`
+--
+
+LOCK TABLES `TEACHER` WRITE;
+/*!40000 ALTER TABLE `TEACHER` DISABLE KEYS */;
+INSERT INTO `TEACHER` VALUES ('00T0049','Branden','Barrera','6462746345','gravida.Praesent@commodohendrerit.org'),('01T0006','Cyrus','Hancock','4083026452','porttitor.scelerisque.neque@tempusloremfringilla.co.uk'),('01T0045','Randall','Phelps','2799973457','pede@orciUt.co.uk'),('01T0046','Ignatius','Holden','7358120564','massa.Quisque.porttitor@eratvolutpatNulla.org'),('02T0031','Cedric','Todd','140285794','mollis.Phasellus.libero@elit.org'),('05T0029','Fay','Williams','7996230718','consequat@velquam.edu'),('05T0039','Adam','Griffith','216429400','egestas@lectusNullamsuscipit.ca'),('05T0048','Fiona','Moore','6829381667','sociis.natoque@aliquetsem.ca'),('06T0004','Matthew','Hale','8903402573','a@luctus.org'),('06T0005','Eaton','Valdez','2226700121','eleifend.Cras.sed@Utnecurna.co.uk'),('06T0012','Lucian','Oliver','8392815550','luctus.Curabitur@sitametultricies.com'),('07T0001','Amaya','Haley','5717237811','lectus.Cum@eueros.edu'),('08T0008','Erich','Lowery','3741587654','fermentum.vel.mauris@nasceturridiculusmus.com'),('09T0028','Halee','Morse','1316192691','id.mollis@adipiscing.co.uk'),('09T0038','Megan','Mckee','5310685569','bibendum.ullamcorper@Aliquamnec.org'),('10T0034','Aaron','Sellers','3479497023','id.magna.et@consectetuer.com'),('11T0002','Alexander','Mccarty','399242623','dui.Cum@Sedeu.co.uk'),('11T0011','Miranda','Lowe','2589573842','non.enim@eros.edu'),('11T0022','Hannah','Bonner','1276460846','lorem@varius.edu'),('12T0013','Warren','Waller','2565138078','sem.vitae@interdumliberodui.ca'),('12T0023','Denton','Barron','7445251596','ornare@Mauris.org'),('12T0025','Elton','Huber','562792738','Integer.in@eulacus.org'),('12T0030','Russell','Pacheco','7256325574','tincidunt.congue.turpis@dui.net'),('12T0035','Azalia','Cruz','7159605814','varius.Nam.porttitor@purusNullamscelerisque.edu'),('13T0014','Yardley','Haley','47141013','Nullam@acorciUt.edu'),('13T0018','Dante','Dorsey','5848963482','eros.non@ullamcorperDuis.com'),('13T0019','Lewis','Johnston','3922287798','risus@gravidasitamet.ca'),('14T0015','Porter','Silva','8235326730','Nam@placerataugue.ca'),('14T0024','Petra','Knapp','6622866786','Curabitur.ut@Fuscealiquet.com'),('16T0037','Juliet','Ramsey','3971234273','orci.lobortis@Aliquamfringilla.net'),('95T0017','Allegra','Avery','5779444907','sed.tortor.Integer@at.edu'),('95T0036','Amery','Grimes','4971115023','metus.Vivamus@risusvariusorci.net'),('95T0041','Ahmed','Hahn','3295086783','commodo.at.libero@turpisegestas.ca'),('96T0042','Halee','Hull','8862397357','dapibus@felis.com'),('96T0047','Angela','Peck','7597363131','aptent@Nunc.net'),('98T0009','Daryl','Osborn','2073437849','vel@loremauctorquis.edu'),('98T0032','Phoebe','Pate','8810790251','Donec.feugiat@arcuSed.co.uk'),('99T0021','Idola','Salinas','5871961480','risus.In.mi@diamnuncullamcorper.ca'),('99T0026','Jonah','Spears','6946111448','feugiat.non@hymenaeosMauris.com');
+/*!40000 ALTER TABLE `TEACHER` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_group`
+--
+
+DROP TABLE IF EXISTS `auth_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_group` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_group`
+--
+
+LOCK TABLES `auth_group` WRITE;
+/*!40000 ALTER TABLE `auth_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_group` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_group_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_group_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_group_permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` (`group_id`,`permission_id`),
+  KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
+  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
+  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_group_permissions`
+--
+
+LOCK TABLES `auth_group_permissions` WRITE;
+/*!40000 ALTER TABLE `auth_group_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_group_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_permission`
+--
+
+DROP TABLE IF EXISTS `auth_permission`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_permission` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `content_type_id` int(11) NOT NULL,
+  `codename` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
+  CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_permission`
+--
+
+LOCK TABLES `auth_permission` WRITE;
+/*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can view log entry',1,'view_logentry'),(5,'Can add permission',2,'add_permission'),(6,'Can change permission',2,'change_permission'),(7,'Can delete permission',2,'delete_permission'),(8,'Can view permission',2,'view_permission'),(9,'Can add group',3,'add_group'),(10,'Can change group',3,'change_group'),(11,'Can delete group',3,'delete_group'),(12,'Can view group',3,'view_group'),(13,'Can add user',4,'add_user'),(14,'Can change user',4,'change_user'),(15,'Can delete user',4,'delete_user'),(16,'Can view user',4,'view_user'),(17,'Can add content type',5,'add_contenttype'),(18,'Can change content type',5,'change_contenttype'),(19,'Can delete content type',5,'delete_contenttype'),(20,'Can view content type',5,'view_contenttype'),(21,'Can add session',6,'add_session'),(22,'Can change session',6,'change_session'),(23,'Can delete session',6,'delete_session'),(24,'Can view session',6,'view_session'),(25,'Can add complaint file',7,'add_complaintfile'),(26,'Can change complaint file',7,'change_complaintfile'),(27,'Can delete complaint file',7,'delete_complaintfile'),(28,'Can view complaint file',7,'view_complaintfile'),(29,'Can add complaints',8,'add_complaints'),(30,'Can change complaints',8,'change_complaints'),(31,'Can delete complaints',8,'delete_complaints'),(32,'Can view complaints',8,'view_complaints'),(33,'Can add employee',9,'add_employee'),(34,'Can change employee',9,'change_employee'),(35,'Can delete employee',9,'delete_employee'),(36,'Can view employee',9,'view_employee'),(37,'Can add hostel',10,'add_hostel'),(38,'Can change hostel',10,'change_hostel'),(39,'Can delete hostel',10,'delete_hostel'),(40,'Can view hostel',10,'view_hostel'),(41,'Can add key pair',11,'add_keypair'),(42,'Can change key pair',11,'change_keypair'),(43,'Can delete key pair',11,'delete_keypair'),(44,'Can view key pair',11,'view_keypair'),(45,'Can add mess',12,'add_mess'),(46,'Can change mess',12,'change_mess'),(47,'Can delete mess',12,'delete_mess'),(48,'Can view mess',12,'view_mess'),(49,'Can add room',13,'add_room'),(50,'Can change room',13,'change_room'),(51,'Can delete room',13,'delete_room'),(52,'Can view room',13,'view_room'),(53,'Can add student',14,'add_student'),(54,'Can change student',14,'change_student'),(55,'Can delete student',14,'delete_student'),(56,'Can view student',14,'view_student'),(57,'Can add teacher',15,'add_teacher'),(58,'Can change teacher',15,'change_teacher'),(59,'Can delete teacher',15,'delete_teacher'),(60,'Can view teacher',15,'view_teacher'),(61,'Can add admin',16,'add_admin'),(62,'Can change admin',16,'change_admin'),(63,'Can delete admin',16,'delete_admin'),(64,'Can view admin',16,'view_admin'),(65,'Can add counselor',17,'add_counselor'),(66,'Can change counselor',17,'change_counselor'),(67,'Can delete counselor',17,'delete_counselor'),(68,'Can view counselor',17,'view_counselor'),(69,'Can add hostelite',18,'add_hostelite'),(70,'Can change hostelite',18,'change_hostelite'),(71,'Can delete hostelite',18,'delete_hostelite'),(72,'Can view hostelite',18,'view_hostelite'),(73,'Can add non admin',19,'add_nonadmin'),(74,'Can change non admin',19,'change_nonadmin'),(75,'Can delete non admin',19,'delete_nonadmin'),(76,'Can view non admin',19,'view_nonadmin'),(77,'Can add supervisor',20,'add_supervisor'),(78,'Can change supervisor',20,'change_supervisor'),(79,'Can delete supervisor',20,'delete_supervisor'),(80,'Can view supervisor',20,'view_supervisor'),(81,'Can add account details',21,'add_accountdetails'),(82,'Can change account details',21,'change_accountdetails'),(83,'Can delete account details',21,'delete_accountdetails'),(84,'Can view account details',21,'view_accountdetails'),(85,'Can add local guardian',22,'add_localguardian'),(86,'Can change local guardian',22,'change_localguardian'),(87,'Can delete local guardian',22,'delete_localguardian'),(88,'Can view local guardian',22,'view_localguardian');
+/*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_user`
+--
+
+DROP TABLE IF EXISTS `auth_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `password` varchar(128) NOT NULL,
+  `last_login` datetime(6) DEFAULT NULL,
+  `is_superuser` tinyint(1) NOT NULL,
+  `username` varchar(150) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(150) NOT NULL,
+  `email` varchar(254) NOT NULL,
+  `is_staff` tinyint(1) NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `date_joined` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_user`
+--
+
+LOCK TABLES `auth_user` WRITE;
+/*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$120000$zRjucp6e7eLq$cRRjdRQE4zYT+PhbEgZtf+JTZTsD+GgVobFGBLY+3v8=','2018-10-20 04:22:21.048528',1,'pranay','','','',1,1,'2018-10-20 04:21:47.019793');
+/*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_user_groups`
+--
+
+DROP TABLE IF EXISTS `auth_user_groups`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user_groups` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `auth_user_groups_user_id_group_id_94350c0c_uniq` (`user_id`,`group_id`),
+  KEY `auth_user_groups_group_id_97559544_fk_auth_group_id` (`group_id`),
+  CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
+  CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_user_groups`
+--
+
+LOCK TABLES `auth_user_groups` WRITE;
+/*!40000 ALTER TABLE `auth_user_groups` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_user_groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auth_user_user_permissions`
+--
+
+DROP TABLE IF EXISTS `auth_user_user_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auth_user_user_permissions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq` (`user_id`,`permission_id`),
+  KEY `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id`),
+  CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
+  CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auth_user_user_permissions`
+--
+
+LOCK TABLES `auth_user_user_permissions` WRITE;
+/*!40000 ALTER TABLE `auth_user_user_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `auth_user_user_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `django_admin_log`
+--
+
+DROP TABLE IF EXISTS `django_admin_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_admin_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `action_time` datetime(6) NOT NULL,
+  `object_id` longtext,
+  `object_repr` varchar(200) NOT NULL,
+  `action_flag` smallint(5) unsigned NOT NULL,
+  `change_message` longtext NOT NULL,
+  `content_type_id` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `django_admin_log_content_type_id_c4bce8eb_fk_django_co` (`content_type_id`),
+  KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
+  CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
+  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `django_admin_log`
+--
+
+LOCK TABLES `django_admin_log` WRITE;
+/*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
+/*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `django_content_type`
+--
+
+DROP TABLE IF EXISTS `django_content_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_content_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `app_label` varchar(100) NOT NULL,
+  `model` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `django_content_type`
+--
+
+LOCK TABLES `django_content_type` WRITE;
+/*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(21,'api','accountdetails'),(16,'api','admin'),(7,'api','complaintfile'),(8,'api','complaints'),(17,'api','counselor'),(9,'api','employee'),(10,'api','hostel'),(18,'api','hostelite'),(11,'api','keypair'),(22,'api','localguardian'),(12,'api','mess'),(19,'api','nonadmin'),(13,'api','room'),(14,'api','student'),(20,'api','supervisor'),(15,'api','teacher'),(3,'auth','group'),(2,'auth','permission'),(4,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session');
+/*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `django_migrations`
+--
+
+DROP TABLE IF EXISTS `django_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_migrations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `app` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `applied` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `django_migrations`
+--
+
+LOCK TABLES `django_migrations` WRITE;
+/*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2018-10-20 04:18:38.090022'),(2,'auth','0001_initial','2018-10-20 04:18:39.261528'),(3,'admin','0001_initial','2018-10-20 04:18:39.531616'),(4,'admin','0002_logentry_remove_auto_add','2018-10-20 04:18:39.560304'),(5,'admin','0003_logentry_add_action_flag_choices','2018-10-20 04:18:39.580433'),(6,'api','0001_initial','2018-10-20 04:18:42.633821'),(7,'contenttypes','0002_remove_content_type_name','2018-10-20 04:18:42.822201'),(8,'auth','0002_alter_permission_name_max_length','2018-10-20 04:18:42.847745'),(9,'auth','0003_alter_user_email_max_length','2018-10-20 04:18:42.887194'),(10,'auth','0004_alter_user_username_opts','2018-10-20 04:18:42.913439'),(11,'auth','0005_alter_user_last_login_null','2018-10-20 04:18:42.998400'),(12,'auth','0006_require_contenttypes_0002','2018-10-20 04:18:43.006329'),(13,'auth','0007_alter_validators_add_error_messages','2018-10-20 04:18:43.024780'),(14,'auth','0008_alter_user_username_max_length','2018-10-20 04:18:43.048792'),(15,'auth','0009_alter_user_last_name_max_length','2018-10-20 04:18:43.074038'),(16,'sessions','0001_initial','2018-10-20 04:18:43.151856');
+/*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `django_session`
+--
+
+DROP TABLE IF EXISTS `django_session`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `django_session` (
+  `session_key` varchar(40) NOT NULL,
+  `session_data` longtext NOT NULL,
+  `expire_date` datetime(6) NOT NULL,
+  PRIMARY KEY (`session_key`),
+  KEY `django_session_expire_date_a5c62663` (`expire_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `django_session`
+--
+
+LOCK TABLES `django_session` WRITE;
+/*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
+INSERT INTO `django_session` VALUES ('7k5os9jizeb6gwcc8ixthxdwqdk2tab6','MGJlYzQ0YWQyMmQ2ZWRmMDBlMDc4M2IyMjk4YmFkMzQ0OWUyY2JiYjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmMTI4ZmMyZTZkMjZjZTMzNTY1MWNmMTU0NTUxNDcyZjdhNzIwNWMwIn0=','2018-11-03 04:22:21.055126');
+/*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-10-20 10:01:06
