@@ -1,0 +1,19 @@
+{ 
+    "data": [  
+    
+        {
+            "Name": "Rati",
+            "Usn": "1RV15IS045",
+            "Branch": "ISE"   
+        }
+
+        ,
+        {
+                "Name":"Prabhu",
+            "Usn": "1RV15IS039",
+            "Branch": "ISE"
+
+
+        }
+    ]
+}

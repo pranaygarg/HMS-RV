@@ -69,7 +69,7 @@ def index(request):
     print(data)
     
     ######PARSING COMPLETE####
-    return render(request, 'studview/studview.html', context = context_dict)
+    return render(request, 'studview/studview1.html', context = context_dict)
 
 def complaint_reg(request):
     usn = get_server_side_cookie(request,'user_id')

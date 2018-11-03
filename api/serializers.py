@@ -7,9 +7,16 @@ class StudentSerializer(serializers.ModelSerializer):
 		fields = ("__all__")
 
 class HosteliteSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = Hostelite
-		fields = ("__all__")
+    usn = StudentSerializer(required = True)
+    class Meta:
+        model = Hostelite
+        fields = ('usn','keys','counselor','mess_name',)
+
+'''def create(self, validated_data):
+        stud_data = validated_data.pop('student')
+        usn = StduentSerializer.create(StudentSerializer(), validated_data=stud_data)
+        stu, created = Hostelite.objects.update_or_create(usn=usn)
+        return stu'''
 
 # class AccountDetailsSerializer(serializers.ModelSerializer):
 # 	class Meta:

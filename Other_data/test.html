@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title> JSON Sandbox</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <p id = "demo"></p>
+        <script>
+        
+          /*  var data = [{
+                Name: "rati",
+                Usn: "1RV15IS045",
+                Branch: "ISE",   
+            },
+                        {
+                            Name: "Prabhu",
+                            Usn : "1RV15IS039",
+                            Branch: "ISE",
+                        }]
+            
+            //data = JSON.stringify(data);
+            var text = "";
+           for(var i =0;i<data.length;i++){
+               
+                text += '<li>'+"Name: "+data[i].Name+" "+"Usn: "+data[i].Usn+'</li>';
+               
+           }
+            document.getElementById("demo").innerHTML= text;*/
+        
+            $.getJSON('http://127.0.0.1:8000/api/hostelite/1RV17IS128/',function(data){
+                
+                //data = JSON.parse(data);
+                data1 = data.usn;
+                var txt1 = " ";
+                var txt ='';
+                for(var key in data1)
+                    txt1 += '<tr><td>'+key+'</td><td>'+data1[key]+'</td></tr>';
+                for(var key in data)
+                    txt += '<tr><td>'+key+'</td><td>'+data[key]+'</td></tr>';
+                document.getElementById("demo").innerHTML="<table border ='1'>"+txt1+txt+'</table>';
+               
+
+                
+            })
+            /*var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                
+                if(this.readyState == 4 && this.status == 200){
+                    var resp = JSON.parse(xhttp.responseText);
+                    data = resp.data;
+                    var output = "";
+                    
+                    for(var i =0;i<data.length;i++)
+                        output += '<tr><td>'+data[i].Name +"</td><td> "+data[i].Usn+'</td></tr>';
+                    document.getElementById("demo").innerHTML="<table border= '1'><th>Name</th><th>USN</th>"+output+"</table>";
+                    
+                }   
+            };
+            xhttp.open("GET","test.json",true);
+            xhttp.send();*/
+            
+            
+            
+            
+        </script>
+    
+    
+    </body>
+
+
+
+
+
+</html>

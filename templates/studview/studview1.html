@@ -31,14 +31,7 @@
             <div id="studinfo" class="w3-container w3-border city">
                 <h2>Student Info</h2>
                 <table id="t1" class = "w3-table table-responsive-md w3-striped">
-                    {% for data in stud_data.items %}
-                        <tr>
-                            <th>{{ data.0 }}</th>
-                            <td>{{ data.1 }}</td>
-                        </tr>
-                    {% endfor %}
                 </table>
-                <p id="demo"></p>
             </div>
             <!---- ROOM INFO ----->
             <div id="roominfo" class="w3-container w3-border city" style="display:none">
@@ -138,16 +131,20 @@
                 xmlhttp.open("GET",query_url, true);
                 xmlhttp.send();
                 function TraverseIt(obj){
+                    var tabx="";
                     for(var prop in obj){
                         if(typeof obj[prop]=='object'){
                             // object
-                            TraverseIt(obj[prop]);
+                            for(var x in obj[prop]){
+                             tabx+="<tr><th>"+x+"</th><td>"+obj[prop][x]+"</td></tr>";
+                         }
                         }else{
                             // something else
                             //alert('The value of '+prop+' is '+obj[prop]+'.');
-                           document.getElementById("demo").innerHTML +="<tr><th>"+prop+"</th><td>"+obj[prop]+"</td></tr>";
+                             tabx+="<tr><th>"+prop+"</th><td>"+obj[prop]+"</td></tr>";
                         }
                     }
+                     document.getElementById("t1").innerHTML = tabx;
                 };
                 function opensection(evt, cityName) {
               var i, x, tablinks;
